@@ -1,98 +1,68 @@
- # 🌟 **BestMatch** – Smarter Product Comparison Made Easy! 🌟  
+# 🌟 BestMatch – AI-Powered Product Comparison
 
-**BestMatch** is your ultimate platform for intelligent product comparisons. Whether you're choosing the latest **Smartphones**, exploring top **Laptops**, or evaluating the best **Tablets**, we simplify decision-making to save you time and effort. 🚀  
-
----
-
-## 🚀 **Key Features**  
-
-### 📊 **1. Comprehensive Product Comparisons**  
-- Effortlessly compare products like **Smartphones**, **Laptops**, and **Tablets** side-by-side.  
-- View detailed specifications, including:  
-  - **Camera performance**  
-  - **Display quality**  
-  - **Battery life**  
-- **Visual indicators** like blue and red bars highlight product rankings and ratings for instant insights.  
-
-### 📂 **2. Seamless Category Navigation**  
-Switch between categories with ease:  
-- 📱 **Smartphones**  
-- 🏍️ **Tablets**  
-- 💻 **Laptops**  
-
-### 🎨 **3. User-Friendly Design**  
-- **Clean and intuitive interface** for an engaging experience.  
-- **Color-coded bars** to simplify comparisons.  
-- Easy-to-read **tabular layouts** for quick insights.  
-
-### 🖼️ **4. Visual Product Information**  
-- High-quality **product images** for quick recognition.  
-- Clear visual representations aid decision-making.  
-
-### 🛒 **5. Smart Purchasing Guidance**  
-- Compare multiple products **side-by-side** to find the perfect match.  
-- Focus on products tailored to your **preferences**, **needs**, and **budget**.  
+**BestMatch** now uses the **Anthropic AI API** to fetch live specs for ANY device — no more static databases or manual updates!
 
 ---
 
-## 🔍 **Why Choose BestMatch?**  
+## 🚀 What's New (v2.0)
 
-- **Streamlined Decision-Making**: Eliminate the hassle of switching between multiple product pages.  
-- **Time-Saving**: Get all the details you need in one place.  
-- **Visual Comparisons**: Understand differences at a glance with engaging visual aids and charts.  
+### ✨ AI-Powered Live Search
+- Search **any phone, tablet, or laptop** ever made — not just a pre-set list
+- Specs are fetched in real-time from the Anthropic API
+- Always up to date — covers 2025 devices that didn't exist in v1
 
----
+### 🎨 Redesigned UI
+- Dark, modern interface with glassmorphism header
+- Smooth animations on spec reveal
+- Fully responsive: works on mobile, tablet, and desktop
+- Single shared CSS + JS — no more duplicated code across 3 pages
 
-## 📚 **How to Use BestMatch**  
-
-- Visit the **BestMatch** website.  
-- Select your preferred category:  
-   - 📱 **Smartphones**  
-   - 🏍️ **Tablets**  
-   - 💻 **Laptops**  
-- Choose the products you wish to compare.  
-- View detailed **Side-by-Side Comparisons** with specifications and visuals.  
-- Make an informed decision and shop with confidence!  
-
----
-
-## 🌟 **Demo Preview**  
-
-![Demo 1](https://i.postimg.cc/CLnQq6Mp/Demos6.png)  
-
-![Demo 2](https://i.postimg.cc/YSHZkfHK/Demos5.png)  
-
-![Demo 3](https://i.postimg.cc/RZfyjp2L/Demos4.png) 
-
-![Demo 4](https://i.postimg.cc/PqQcqpXL/Demos3.png)  
-
-![Demo 5](https://i.postimg.cc/KjRsQ0nL/Demos2.png)  
-
-![Demo 6](https://i.postimg.cc/hPhq3rS2/Demos1.png)   
+### 🛠️ Bug Fixes from v1
+- Fixed `laptop.js` crash: `LaptopData` (wrong case) → fixed
+- Fixed `tablet.js` crash: missing DOM IDs `image${i}` / `specs${i}` → fixed
+- Removed duplicate CSS rules across 3 files — now one `shared.css`
 
 ---
 
-## 👥 **Contributing**
-We welcome contributions to improve BestMatch. Follow these steps:
-1. Fork the repository.
-2. Create your feature branch: `git checkout -b feature/AmazingFeature`.
-3. Commit your changes: `git commit -m 'Add some AmazingFeature'`.
-4. Push to the branch: `git push origin feature/AmazingFeature`.
-5. Open a pull request.
+## 📁 File Structure
+
+```
+bestmatch/
+├── index.html       ← Mobiles page
+├── tablet.html      ← Tablets page
+├── laptop.html      ← Laptops page
+├── shared.css       ← All styles (was 3 separate CSS files)
+├── bestmatch.js     ← All logic + Anthropic API integration
+├── favicon.ico
+└── site.webmanifest
+```
 
 ---
 
-## 🛠️ **Technologies Used**
-- **HTML**, **CSS**, **JavaScript** for the Frontend.
-- Backend and database support (coming soon).
+## ⚙️ How It Works
+
+1. User types a device name (e.g. "iPhone 16 Pro Max")
+2. Autocomplete shows popular suggestions
+3. On Enter or suggestion click → Anthropic API is called
+4. AI returns structured JSON with all specs
+5. Card renders with animated spec rows
 
 ---
 
-## 📬 **Contact Us**
-Have questions or suggestions? Feel free to reach out:
-- 📧 Email: YashChaudhary016210@gmail.com
-- 🌐 Website: [BestMatch](https://bestmatch.surge.sh)
+## 🔧 Setup
+
+The project runs on `claude.ai` which handles the Anthropic API key automatically.
+
+To run locally or deploy elsewhere, add your API key:
+```js
+// In bestmatch.js, add to fetch headers:
+'x-api-key': 'YOUR_API_KEY',
+'anthropic-version': '2023-06-01',
+'anthropic-dangerous-direct-browser-access': 'true'
+```
 
 ---
 
-**Start comparing today!** ✨ Your smarter shopping experience begins here.
+## 📬 Contact
+- Email: YashChaudhary016210@gmail.com
+- Website: [BestMatch](https://bestmatch.surge.sh)
