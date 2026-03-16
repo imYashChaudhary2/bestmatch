@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BestMatch — Interactive README</title>
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <style>
+        :root {
+            --acc: #4f6ef7;
+            --acc2: #e84393;
+            --grn: #22c55e;
+            --red: #ef4444;
+            --bg: #0a0a0f;
+            --bg2: #111118;
+            --bg3: #1a1a24;
+            --brd: rgba(255, 255, 255, 0.1);
+            --txt: #e8e8f0;
+            --txt2: #8888a0;
+            --rad-md: 8px;
+            --rad-lg: 12px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--txt);
+            font-family: 'Courier New', Courier, monospace;
+            min-height: 100vh;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        #wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.25rem 4rem;
+        }
+
+        .hero {
+            background: var(--bg2);
+            border: 0.5px solid var(--brd);
+            border-radius: var(--rad-lg);
+            padding: 1.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .hero-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .hero-title {
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 6px;
+        }
+
+        .hero-title span {
+            color: var(--acc);
+        }
+
+        .hero-sub {
+            font-size: 12px;
+            color: var(--txt2);
+            line-height: 1.6;
+            max-width: 400px;
+        }
+
+        .hero-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: flex-end;
+        }
+
+        .badge {
+            font-size: 10px;
+            font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 0.5px solid;
+            white-space: nowrap;
+        }
+
+        .badge-blue {
+            background: rgba(79, 110, 247, 0.12);
+            border-color: rgba(79, 110, 247, 0.3);
+            color: var(--acc);
+        }
+
+        .badge-pink {
+            background: rgba(232, 67, 147, 0.12);
+            border-color: rgba(232, 67, 147, 0.3);
+            color: var(--acc2);
+        }
+
+        .badge-grn {
+            background: rgba(34, 197, 94, 0.12);
+            border-color: rgba(34, 197, 94, 0.3);
+            color: var(--grn);
+        }
+
+        .dot {
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: currentColor;
+            margin-right: 5px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: .4;
+                transform: scale(.7)
+            }
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 8px;
+            margin-top: 1.25rem;
+        }
+
+        .stat {
+            background: var(--bg3);
+            border: 0.5px solid var(--brd);
+            border-radius: var(--rad-md);
+            padding: 10px 12px;
+            text-align: center;
+        }
+
+        .stat-n {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--acc);
+        }
+
+        .stat-l {
+            font-size: 10px;
+            color: var(--txt2);
+            margin-top: 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .tab-bar {
+            display: flex;
+            gap: 3px;
+            margin-bottom: 1rem;
+            border-bottom: 0.5px solid var(--brd);
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            background: none;
+            border: 0.5px solid transparent;
+            border-bottom: none;
+            border-radius: 6px 6px 0 0;
+            padding: 7px 14px;
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--txt2);
+            cursor: pointer;
+            position: relative;
+            top: 1px;
+            transition: all .15s;
+        }
+
+        .tab:hover {
+            color: var(--txt);
+        }
+
+        .tab.on {
+            background: var(--bg2);
+            border-color: var(--brd);
+            border-bottom-color: var(--bg2);
+            color: var(--txt);
+        }
+
+        .panel {
+            display: none;
+        }
+
+        .panel.on {
+            display: block;
+        }
+
+        .card {
+            background: var(--bg2);
+            border: 0.5px solid var(--brd);
+            border-radius: var(--rad-lg);
+            padding: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-title {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--txt2);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-title::after {
+            content: '';
+            flex: 1;
+            height: 0.5px;
+            background: var(--brd);
+        }
+
+        .step-list {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .step {
+            display: flex;
+            gap: 10px;
+            padding: 9px 8px;
+            border-radius: var(--rad-md);
+            cursor: pointer;
+            border: 0.5px solid transparent;
+            transition: all .15s;
+        }
+
+        .step:hover {
+            background: var(--bg3);
+        }
+
+        .step.on {
+            background: rgba(79, 110, 247, 0.08);
+            border-color: rgba(79, 110, 247, 0.25);
+        }
+
+        .step-num {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(79, 110, 247, 0.12);
+            color: var(--acc);
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+            transition: all .15s;
+        }
+
+        .step.on .step-num {
+            background: var(--acc);
+            color: #fff;
+        }
+
+        .step-title {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 3px;
+            color: var(--txt);
+        }
+
+        .step-desc {
+            font-size: 11px;
+            color: var(--txt2);
+            line-height: 1.5;
+        }
+
+        .compare-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .compare-box {
+            background: var(--bg3);
+            border: 0.5px solid var(--brd);
+            border-radius: var(--rad-md);
+            padding: 12px;
+        }
+
+        .compare-box.new {
+            background: rgba(79, 110, 247, 0.06);
+            border-color: rgba(79, 110, 247, 0.2);
+        }
+
+        .compare-label {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--txt2);
+            margin-bottom: 8px;
+        }
+
+        .compare-box.new .compare-label {
+            color: var(--acc);
+        }
+
+        .compare-items {
+            font-size: 11px;
+            color: var(--txt2);
+            line-height: 1.8;
+        }
+
+        .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .file-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 10px;
+            border-radius: var(--rad-md);
+            cursor: pointer;
+            border: 0.5px solid transparent;
+            transition: all .15s;
+            font-size: 12px;
+        }
+
+        .file-row:hover {
+            background: var(--bg3);
+        }
+
+        .file-row.on {
+            background: rgba(79, 110, 247, 0.08);
+            border-color: rgba(79, 110, 247, 0.25);
+        }
+
+        .file-ico {
+            font-size: 13px;
+            width: 18px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .file-name {
+            font-weight: 700;
+            flex: 1;
+            color: var(--txt);
+        }
+
+        .ftag {
+            font-size: 9px;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 10px;
+        }
+
+        .ftag-new {
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--grn);
+        }
+
+        .ftag-upd {
+            background: rgba(79, 110, 247, 0.12);
+            color: var(--acc);
+        }
+
+        .ftag-del {
+            background: rgba(239, 68, 68, 0.12);
+            color: var(--red);
+        }
+
+        .file-detail {
+            background: var(--bg3);
+            border: 0.5px solid var(--brd);
+            border-radius: var(--rad-md);
+            padding: 12px 14px;
+            margin-top: 8px;
+            font-size: 11px;
+            line-height: 1.6;
+            color: var(--txt2);
+            display: none;
+        }
+
+        .file-detail.on {
+            display: block;
+        }
+
+        .file-detail code {
+            background: var(--bg2);
+            border: 0.5px solid var(--brd);
+            border-radius: 4px;
+            padding: 1px 5px;
+            font-size: 10px;
+            color: var(--acc);
+        }
+
+        .file-detail strong {
+            color: var(--txt);
+            font-weight: 700;
+        }
+
+        .codeblock {
+            background: var(--bg3);
+            border: 0.5px solid var(--brd);
+            border-radius: var(--rad-md);
+            padding: 12px 14px;
+            margin: 8px 0;
+            position: relative;
+        }
+
+        .codeblock pre {
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            line-height: 1.6;
+            overflow-x: auto;
+            color: var(--txt);
+            white-space: pre;
+        }
+
+        .cbtn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: var(--bg2);
+            border: 0.5px solid var(--brd);
+            border-radius: 6px;
+            padding: 3px 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 9px;
+            cursor: pointer;
+            color: var(--txt2);
+            transition: all .15s;
+        }
+
+        .cbtn:hover {
+            color: var(--acc);
+            border-color: var(--acc);
+        }
+
+        .clabel {
+            font-size: 9px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            color: var(--txt2);
+            margin-bottom: 6px;
+        }
+
+        .deploy-step {
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 10px 8px;
+            border-radius: var(--rad-md);
+            transition: background .15s;
+        }
+
+        .deploy-step:hover {
+            background: var(--bg3);
+        }
+
+        .dnum {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            background: rgba(232, 67, 147, 0.12);
+            color: var(--acc2);
+            font-size: 10px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .dlabel {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            color: var(--txt);
+        }
+
+        .bug-row {
+            display: flex;
+            gap: 8px;
+            align-items: flex-start;
+            padding: 8px;
+            border-radius: var(--rad-md);
+            margin-bottom: 3px;
+        }
+
+        .bug-row:hover {
+            background: var(--bg3);
+        }
+
+        .btag {
+            font-size: 9px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+
+        .btag-bug {
+            background: rgba(239, 68, 68, 0.12);
+            color: var(--red);
+        }
+
+        .btag-fix {
+            background: rgba(34, 197, 94, 0.12);
+            color: var(--grn);
+        }
+
+        .btext {
+            font-size: 11px;
+            color: var(--txt2);
+            line-height: 1.5;
+        }
+
+        .btext strong {
+            color: var(--txt);
+            font-weight: 700;
+        }
+
+        .btext code {
+            background: var(--bg3);
+            border-radius: 3px;
+            padding: 1px 4px;
+            font-size: 10px;
+            color: var(--acc);
+        }
+
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 12px;
+        }
+
+        .chip {
+            background: var(--bg3);
+            border: 0.5px solid var(--brd);
+            border-radius: 20px;
+            padding: 4px 12px;
+            font-size: 11px;
+            cursor: pointer;
+            color: var(--txt2);
+            transition: all .15s;
+        }
+
+        .chip:hover,
+        .chip.on {
+            border-color: var(--acc);
+            color: var(--acc);
+            background: rgba(79, 110, 247, 0.08);
+        }
+
+        .demo-card {
+            background: var(--bg3);
+            border: 0.5px solid var(--brd);
+            border-radius: var(--rad-md);
+            overflow: hidden;
+            display: none;
+        }
+
+        .demo-card.on {
+            display: block;
+        }
+
+        .demo-header {
+            padding: 12px 14px;
+            border-bottom: 0.5px solid var(--brd);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .demo-name {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--txt);
+        }
+
+        .demo-cat {
+            font-size: 10px;
+            color: var(--txt2);
+            background: var(--bg2);
+            border: 0.5px solid var(--brd);
+            border-radius: 10px;
+            padding: 2px 8px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 7px 14px;
+            border-bottom: 0.5px solid var(--brd);
+            font-size: 11px;
+            transition: background .15s;
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-row:hover {
+            background: var(--bg2);
+        }
+
+        .spec-key {
+            color: var(--txt2);
+        }
+
+        .spec-val {
+            font-weight: 700;
+            text-align: right;
+            max-width: 60%;
+            color: var(--txt);
+        }
+
+        .spec-row.price {
+            background: rgba(79, 110, 247, 0.06);
+        }
+
+        .spec-row.price .spec-val {
+            color: var(--acc);
+            font-size: 13px;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 12px;
+            border-radius: var(--rad-md);
+            border: 0.5px solid var(--brd);
+            background: var(--bg3);
+            font-size: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--txt);
+            transition: border-color .15s;
+            margin-bottom: 8px;
+        }
+
+        .contact-link:hover {
+            border-color: var(--acc);
+        }
+
+        .cl-ico {
+            font-size: 15px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .cl-label {
+            font-size: 10px;
+            color: var(--txt2);
+        }
+
+        .cl-val {
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .cl-arr {
+            margin-left: auto;
+            color: var(--txt2);
+            font-size: 12px;
+        }
+
+        @media (max-width: 520px) {
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .compare-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-badges {
+                align-items: flex-start;
+            }
+
+            .tab {
+                padding: 6px 10px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+
+        <div class="hero">
+            <div class="hero-top">
+                <div>
+                    <div class="hero-title">Best<span>Match</span></div>
+                    <div class="hero-sub">AI-powered comparison for phones, tablets &amp; laptops. 285-device local DB
+                        with unlimited AI fallback.</div>
+                </div>
+                <div class="hero-badges">
+                    <span class="badge badge-blue"><span class="dot"></span>v2.4 &mdash; latest</span>
+                    <span class="badge badge-grn">285 devices</span>
+                    <span class="badge badge-pink">Anthropic API</span>
+                </div>
+            </div>
+            <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-n" id="cnt-mob">0</div>
+                    <div class="stat-l">mobiles</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-n" id="cnt-tab">0</div>
+                    <div class="stat-l">tablets</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-n" id="cnt-lap">0</div>
+                    <div class="stat-l">laptops</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-n">&infin;</div>
+                    <div class="stat-l">via AI</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tab-bar">
+            <button class="tab on" onclick="switchTab('overview',this)">Overview</button>
+            <button class="tab" onclick="switchTab('files',this)">Files</button>
+            <button class="tab" onclick="switchTab('setup',this)">Setup</button>
+            <button class="tab" onclick="switchTab('demo',this)">Live demo</button>
+            <button class="tab" onclick="switchTab('fixes',this)">Bug fixes</button>
+        </div>
+
+        <div class="panel on" id="panel-overview">
+            <div class="card">
+                <div class="card-title">How it works</div>
+                <div class="step-list">
+                    <div class="step on" onclick="selectStep(this)">
+                        <div class="step-num">1</div>
+                        <div>
+                            <div class="step-title">User types a device name</div>
+                            <div class="step-desc">Type anything &mdash; "iPhone 16 Pro Max" or "Xiaomi Pad 5".
+                                Autocomplete shows 8 matching suggestions from the local DB.</div>
+                        </div>
+                    </div>
+                    <div class="step" onclick="selectStep(this)">
+                        <div class="step-num">2</div>
+                        <div>
+                            <div class="step-title">Strict local DB lookup</div>
+                            <div class="step-desc">Every word in the query must match the key exactly. Version tokens
+                                (m1, m2, 5, 6, pro, ultra) are never skipped &mdash; prevents wrong device matches.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step" onclick="selectStep(this)">
+                        <div class="step-num">3</div>
+                        <div>
+                            <div class="step-title">AI fallback for unknown devices</div>
+                            <div class="step-desc">If not in the local DB, Anthropic API returns structured JSON specs
+                                for any device ever made &mdash; unlimited coverage.</div>
+                        </div>
+                    </div>
+                    <div class="step" onclick="selectStep(this)">
+                        <div class="step-num">4</div>
+                        <div>
+                            <div class="step-title">Specs render + image loads</div>
+                            <div class="step-desc">Spec rows animate in immediately. Device image loads asynchronously
+                                from GSMArena CDN &mdash; 108 hardcoded verified URLs.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">What changed from v1</div>
+                <div class="compare-grid">
+                    <div class="compare-box">
+                        <div class="compare-label">v1 &mdash; before</div>
+                        <div class="compare-items">3 separate CSS files<br>3 separate JS files<br>Static dropdown
+                            selectors<br>Fuzzy match engine<br>2 crashing bugs<br>No images for tablets/laptops</div>
+                    </div>
+                    <div class="compare-box new">
+                        <div class="compare-label">v2.4 &mdash; now</div>
+                        <div class="compare-items">1 shared.css<br>1 bestmatch.js<br>Live search inputs<br>Strict
+                            word-match engine<br>All bugs fixed<br>108 verified image URLs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-files">
+            <div class="card">
+                <div class="card-title">File structure &mdash; click a file to see details</div>
+                <div class="file-list">
+                    <div class="file-row on" onclick="selectFile(this,'bestmatch.js')"><span
+                            class="file-ico">&#9881;</span><span class="file-name">bestmatch.js</span><span
+                            class="ftag ftag-new">new</span></div>
+                    <div class="file-row" onclick="selectFile(this,'shared.css')"><span
+                            class="file-ico">&#10022;</span><span class="file-name">shared.css</span><span
+                            class="ftag ftag-new">new</span></div>
+                    <div class="file-row" onclick="selectFile(this,'index.html')"><span
+                            class="file-ico">&#9633;</span><span class="file-name">index.html</span><span
+                            class="ftag ftag-upd">updated</span></div>
+                    <div class="file-row" onclick="selectFile(this,'tablet.html')"><span
+                            class="file-ico">&#9633;</span><span class="file-name">tablet.html</span><span
+                            class="ftag ftag-upd">updated</span></div>
+                    <div class="file-row" onclick="selectFile(this,'laptop.html')"><span
+                            class="file-ico">&#9633;</span><span class="file-name">laptop.html</span><span
+                            class="ftag ftag-upd">updated</span></div>
+                    <div class="file-row" onclick="selectFile(this,'old')"><span class="file-ico">&#10005;</span><span
+                            class="file-name">index.js + tablet.js + laptop.js</span><span
+                            class="ftag ftag-del">deleted</span></div>
+                    <div class="file-row" onclick="selectFile(this,'css')"><span class="file-ico">&#10005;</span><span
+                            class="file-name">index.css + tablet.css + laptop.css</span><span
+                            class="ftag ftag-del">deleted</span></div>
+                </div>
+                <div id="file-detail" class="file-detail on"></div>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-setup">
+            <div class="card">
+                <div class="card-title">Deploy to surge.sh</div>
+                <div class="deploy-step">
+                    <div class="dnum">1</div>
+                    <div style="flex:1">
+                        <div class="dlabel">Add your API key</div>
+                        <div class="codeblock">
+                            <div class="clabel">bestmatch.js &mdash; line 3</div>
+                            <button class="cbtn" id="cb1">copy</button>
+                            <pre>const ANTHROPIC_API_KEY = <span style="color:var(--acc)">'sk-ant-api03-...'</span>;</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="deploy-step">
+                    <div class="dnum">2</div>
+                    <div style="flex:1">
+                        <div class="dlabel">Remove old files from git</div>
+                        <div class="codeblock">
+                            <button class="cbtn" id="cb2">copy</button>
+                            <pre>git rm index.css index.js \
+       laptop.css laptop.js \
+       tablet.css tablet.js
+git commit -m <span style="color:var(--acc)">"chore: remove old files"</span>
+git push</pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="deploy-step">
+                    <div class="dnum">3</div>
+                    <div style="flex:1">
+                        <div class="dlabel">Deploy</div>
+                        <div class="codeblock">
+                            <button class="cbtn" id="cb3">copy</button>
+                            <pre>surge . bestmatch.surge.sh</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-title">On claude.ai</div>
+                <div style="font-size:12px;color:var(--txt2);line-height:1.7">No API key needed &mdash; claude.ai
+                    injects it automatically via the <code
+                        style="background:var(--bg3);border:0.5px solid var(--brd);border-radius:4px;padding:1px 5px;font-size:10px;color:var(--acc)">anthropic-dangerous-direct-browser-access</code>
+                    header. The 285-device local DB works fully offline with zero API calls.</div>
+            </div>
+            <div class="card">
+                <div class="card-title">Contact</div>
+                <a class="contact-link" href="mailto:YashChaudhary016210@gmail.com"><span class="cl-ico">&#9993;</span>
+                    <div>
+                        <div class="cl-label">Email</div>
+                        <div class="cl-val">YashChaudhary016210@gmail.com</div>
+                    </div><span class="cl-arr">&#8599;</span>
+                </a>
+                <a class="contact-link" href="https://bestmatch.surge.sh" target="_blank"><span
+                        class="cl-ico">&#11041;</span>
+                    <div>
+                        <div class="cl-label">Live site</div>
+                        <div class="cl-val">bestmatch.surge.sh</div>
+                    </div><span class="cl-arr">&#8599;</span>
+                </a>
+                <a class="contact-link" href="https://github.com/imYashChaudhary2" target="_blank"><span
+                        class="cl-ico">&#9672;</span>
+                    <div>
+                        <div class="cl-label">GitHub</div>
+                        <div class="cl-val">imYashChaudhary2</div>
+                    </div><span class="cl-arr">&#8599;</span>
+                </a>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-demo">
+            <div class="card">
+                <div class="card-title">Live spec preview &mdash; click any device</div>
+                <div class="chip-row" id="chips"></div>
+                <div class="demo-card on" id="demo-out"></div>
+            </div>
+        </div>
+
+        <div class="panel" id="panel-fixes">
+            <div class="card">
+                <div class="card-title">v1 bugs fixed in v2</div>
+                <div class="bug-row"><span class="btag btag-bug">bug</span>
+                    <div class="btext"><strong>laptop.js crash</strong> &mdash; called <code>LaptopData</code> (capital
+                        L) &rarr; ReferenceError on every selection</div>
+                </div>
+                <div class="bug-row"><span class="btag btag-fix">fixed</span>
+                    <div class="btext">Removed laptop.js entirely, all logic moved to <code>bestmatch.js</code></div>
+                </div>
+                <div class="bug-row" style="margin-top:6px"><span class="btag btag-bug">bug</span>
+                    <div class="btext"><strong>tablet.js crash</strong> &mdash; <code>updateComparison()</code>
+                        referenced missing DOM IDs <code>image1</code>, <code>specs1</code></div>
+                </div>
+                <div class="bug-row"><span class="btag btag-fix">fixed</span>
+                    <div class="btext">Rebuilt tablet page with dynamic search cards &mdash; IDs no longer needed</div>
+                </div>
+                <div class="bug-row" style="margin-top:6px"><span class="btag btag-bug">bug</span>
+                    <div class="btext"><strong>Wrong device matched</strong> &mdash; typing "xiaomi pad 5" returned iPad
+                        Air M2 (fuzzy scoring)</div>
+                </div>
+                <div class="bug-row"><span class="btag btag-fix">fixed</span>
+                    <div class="btext">Strict engine: every query word must appear in the key. Version tokens
+                        (m1/m2/5/6/pro) enforce exact variant matching</div>
+                </div>
+                <div class="bug-row" style="margin-top:6px"><span class="btag btag-bug">bug</span>
+                    <div class="btext"><strong>Images missing for tablets &amp; laptops</strong> &mdash; GSMArena paths
+                        were guessed incorrectly</div>
+                </div>
+                <div class="bug-row"><span class="btag btag-fix">fixed</span>
+                    <div class="btext">108 verified CDN URLs hardcoded per device. AI fallback fetches correct URL for
+                        unknown devices</div>
+                </div>
+                <div class="bug-row" style="margin-top:6px"><span class="btag btag-bug">bug</span>
+                    <div class="btext"><strong>3 duplicate CSS + JS files</strong> &mdash; index/tablet/laptop each had
+                        their own nearly-identical stylesheet</div>
+                </div>
+                <div class="bug-row"><span class="btag btag-fix">fixed</span>
+                    <div class="btext">Single <code>shared.css</code> and <code>bestmatch.js</code> serve all three
+                        pages via <code>data-category</code> on <code>&lt;body&gt;</code></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        var FILE_INFO = {
+            'bestmatch.js': 'Core engine &mdash; 285-device local database, strict word-match algorithm, 108 hardcoded GSMArena image URLs, Anthropic API fallback for unknown devices. All three categories (mobile/tablet/laptop) are driven by <code>data-category</code> on <code>&lt;body&gt;</code> &mdash; one file serves all pages.',
+            'shared.css': 'Unified stylesheet replacing three near-identical files (index.css, tablet.css, laptop.css). Courier New font, dark theme with CSS variables, glassmorphism sticky header, animated spec rows, responsive grid: 3-col &rarr; 2-col &rarr; 1-col.',
+            'index.html': '<strong>Mobiles page</strong> &mdash; live search inputs replace static <code>&lt;select&gt;</code> dropdowns. Sets <code>data-category="mobile"</code> on <code>&lt;body&gt;</code>. Links only to <code>shared.css</code> and <code>bestmatch.js</code>.',
+            'tablet.html': '<strong>Tablets page</strong> &mdash; fixes broken <code>updateComparison()</code> that referenced non-existent DOM IDs. Rebuilt with search cards. Sets <code>data-category="tablet"</code>.',
+            'laptop.html': '<strong>Laptops page</strong> &mdash; fixes the <code>LaptopData</code> ReferenceError crash. Rebuilt with search cards. Sets <code>data-category="laptop"</code>.',
+            'old': '<strong>Deleted &mdash; old JS files.</strong> Had duplicated logic and critical bugs. Fully replaced by <code>bestmatch.js</code>. Run: <code>git rm index.js tablet.js laptop.js</code>',
+            'css': '<strong>Deleted &mdash; old CSS files.</strong> Three nearly-identical files replaced by one <code>shared.css</code>. Run: <code>git rm index.css tablet.css laptop.css</code>',
+        };
+        var DEMO = {
+            'iPhone 16 Pro Max': { cat: 'Mobile', Display: '6.9" OLED 2868x1320, 120Hz', Processor: 'Apple A18 Pro (3nm)', Camera: '48MP + 48MP UW + 12MP 5x', 'RAM / Storage': '8GB / 256GB-1TB', Battery: '4685mAh, 30W wired', Price: 'Starting at $1,199' },
+            'Galaxy S25 Ultra': { cat: 'Mobile', Display: '6.9" QHD+ AMOLED, 120Hz', Processor: 'Snapdragon 8 Elite (3nm)', Camera: '200MP + 50MP UW + 50MP 5x', 'RAM / Storage': '12GB / 256GB-1TB', Battery: '5000mAh, 45W wired', Price: 'Starting at $1,299' },
+            'Google Pixel 9 Pro': { cat: 'Mobile', Display: '6.3" LTPO OLED, 1-120Hz', Processor: 'Tensor G4 (4nm)', Camera: '50MP + 48MP UW + 48MP 5x', 'RAM / Storage': '16GB / 128GB-1TB', Battery: '4700mAh, 37W wired', Price: 'Starting at $999' },
+            'OnePlus 13': { cat: 'Mobile', Display: '6.82" QHD+ AMOLED, 120Hz', Processor: 'Snapdragon 8 Elite (3nm)', Camera: '50MP + 50MP UW + 50MP 3x', 'RAM / Storage': '12GB / 256GB-512GB', Battery: '6000mAh, 100W wired', Price: 'Starting at $899' },
+            'iPad Pro M4': { cat: 'Tablet', Display: '11" Ultra Retina XDR OLED, 120Hz', Processor: 'Apple M4 (10-core)', Camera: '12MP wide + LiDAR', 'RAM / Storage': '8GB-16GB / 256GB-2TB', Battery: 'Up to 10 hrs', Price: 'Starting at $999' },
+            'iPad Air M1': { cat: 'Tablet', Display: '10.9" Liquid Retina IPS, 60Hz', Processor: 'Apple M1 (5nm, 8-core)', Camera: '12MP wide | 12MP UW front', 'RAM / Storage': '8GB / 64GB-256GB', Battery: 'Up to 10 hrs', Price: 'Starting at $499' },
+            'Xiaomi Pad 5': { cat: 'Tablet', Display: '11" IPS LCD 2560x1600, 120Hz', Processor: 'Snapdragon 860 (7nm)', Camera: '13MP | 8MP front', 'RAM / Storage': '6GB / 128GB-256GB', Battery: '8720mAh, 33W wired', Price: 'Starting at $299' },
+            'MacBook Pro M4': { cat: 'Laptop', Display: '14.2" Liquid Retina XDR, 120Hz', Processor: 'Apple M4 (10-core CPU)', Memory: '16GB-32GB unified', Storage: '512GB-4TB SSD', 'Battery Life': 'Up to 24 hours', GPU: 'Apple 10-core GPU', Price: 'Starting at $1,599' },
+            'MacBook Air M1': { cat: 'Laptop', Display: '13.3" Retina IPS, 60Hz', Processor: 'Apple M1 (5nm, 8-core)', Memory: '8GB-16GB unified', Storage: '256GB-2TB SSD', 'Battery Life': 'Up to 18 hours', GPU: 'Apple 7/8-core GPU', Price: 'Starting at $799' },
+            'Dell XPS 15': { cat: 'Laptop', Display: '15.6" OLED 3.5K touch, 60Hz', Processor: 'Intel Core i9-13900H', Memory: '16GB-64GB DDR5', Storage: '512GB-4TB SSD', 'Battery Life': 'Up to 13 hours', GPU: 'NVIDIA RTX 4060 8GB', Price: 'Starting at $1,699' },
+            'Razer Blade 16': { cat: 'Laptop', Display: '16" QHD+ OLED, 240Hz', Processor: 'Intel Core i9-14900HX', Memory: '32GB DDR5', Storage: '1TB PCIe 5.0 SSD', 'Battery Life': 'Up to 6 hours', GPU: 'NVIDIA RTX 4090 16GB', Price: 'Starting at $3,499' },
+        };
+        function switchTab(id, el) { document.querySelectorAll('.tab').forEach(function (t) { t.classList.remove('on') }); document.querySelectorAll('.panel').forEach(function (p) { p.classList.remove('on') }); el.classList.add('on'); document.getElementById('panel-' + id).classList.add('on'); }
+        function selectStep(el) { document.querySelectorAll('.step').forEach(function (s) { s.classList.remove('on') }); el.classList.add('on'); }
+        function selectFile(el, key) { document.querySelectorAll('.file-row').forEach(function (r) { r.classList.remove('on') }); el.classList.add('on'); var det = document.getElementById('file-detail'); det.innerHTML = FILE_INFO[key] || ''; det.classList.add('on'); }
+        function showDemo(name) { document.querySelectorAll('.chip').forEach(function (c) { c.classList.remove('on') }); document.querySelector('.chip[data-name="' + name + '"]').classList.add('on'); var d = DEMO[name]; var specs = Object.entries(d).filter(function (e) { return e[0] !== 'cat' }); document.getElementById('demo-out').innerHTML = '<div class="demo-header"><div class="demo-name">' + name + '</div><div class="demo-cat">' + d.cat + '</div></div>' + specs.map(function (e) { return '<div class="spec-row' + (e[0] === 'Price' ? ' price' : '') + '"><span class="spec-key">' + e[0] + '</span><span class="spec-val">' + e[1] + '</span></div>' }).join(''); document.getElementById('demo-out').classList.add('on'); }
+        function cp(btn, text) { navigator.clipboard.writeText(text).then(function () { btn.textContent = 'copied!'; setTimeout(function () { btn.textContent = 'copy' }, 1500) }); }
+        function animateCount(id, target) { var n = 0, el = document.getElementById(id), inc = Math.ceil(target / 30), t = setInterval(function () { n = Math.min(n + inc, target); el.textContent = n; if (n >= target) clearInterval(t) }, 30); }
+        window.addEventListener('DOMContentLoaded', function () {
+            animateCount('cnt-mob', 55); animateCount('cnt-tab', 35); animateCount('cnt-lap', 40);
+            var chips = document.getElementById('chips');
+            Object.keys(DEMO).forEach(function (name) { var c = document.createElement('span'); c.className = 'chip'; c.dataset.name = name; c.textContent = name; c.onclick = function () { showDemo(name) }; chips.appendChild(c); });
+            showDemo('iPhone 16 Pro Max');
+            document.getElementById('file-detail').innerHTML = FILE_INFO['bestmatch.js'];
+            document.getElementById('file-detail').classList.add('on');
+            document.getElementById('cb1').onclick = function () { cp(this, "const ANTHROPIC_API_KEY = 'sk-ant-api03-...'"); };
+            document.getElementById('cb2').onclick = function () { cp(this, 'git rm index.css index.js laptop.css laptop.js tablet.css tablet.js\ngit commit -m "chore: remove old per-page CSS and JS files"\ngit push'); };
+            document.getElementById('cb3').onclick = function () { cp(this, 'surge . bestmatch.surge.sh'); };
+        });
+    </script>
+</body>
+
+</html>
