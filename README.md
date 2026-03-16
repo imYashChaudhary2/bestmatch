@@ -4,6 +4,10 @@
 
 ---
 
+[![BestMatch Interactive README](docs/preview.png)](https://imyashchaudhary2.github.io/bestmatch/)
+
+---
+
 ## 🚀 What's New (v2.0)
 
 ### ✨ AI-Powered Live Search
