@@ -1,106 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BestMatch</title>
-    <link rel="stylesheet" href="laptop.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BestMatch — Laptop Comparison</title>
+  <link rel="stylesheet" href="shared.css">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="site.webmanifest">
 </head>
-<body>
-    <header>
-        <h1>BestMatch</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Mobiles</a></li>
-                <li><a href="tablet.html">Tablets</a></li>
-                <li><a href="laptop.html">Laptops</a></li>
-            </ul>
-        </nav>
-    </header>
+<body data-category="laptop">
 
-    <main>
-        <div class="comparison-container">
-            <h2>BestMatch Laptops</h2>
-            <div class="product-comparison">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <img src="/images/img1.png" alt="Laptop 1">
-                    <div class="specs">
-                        <select class="laptop-selector" id="laptop1" onchange="updateComparison()">
-                            <option value="">Select Laptop 1</option>
-                            <option value="macbookair">Macbook Air M2</option>
-                            <option value="samsungnotebook">Galaxy Book 4 Pro</option>
-                            <option value="asusvivobook">Asus Vivobook 16</option>
-                            <option value="microsoftsurface">Microsoft Surface Elite</option>
-                            <option value="lenovoideapad5">Lenovo IdeaPad Duet 5</option>
-                            <option value="dellxps13">Dell XPS 13</option>
-                        </select>
-                        <div class="spec-item blue">Name</div>
-                        <div class="spec-item blue">Display</div>
-                        <div class="spec-item blue">Processor</div>
-                        <div class="spec-item blue">Memory</div>
-                        <div class="spec-item blue">Battery Life</div>
-                        <div class="spec-item blue">Graphic Card</div>
-                        <div class="spec-item red">Price</div>
-                    </div>
-                </div>
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <img src="/images/img1.png" alt="Laptop 2">
-                    <div class="specs">
-                        <select class="laptop-selector" id="laptop2" onchange="updateComparison()">
-                            <option value="">Select Laptop 2</option>
-                            <option value="macbookair">Macbook Air M2</option>
-                            <option value="samsungnotebook">Galaxy Book 4 Pro</option>
-                            <option value="asusvivobook">Asus Vivobook 16</option>
-                            <option value="microsoftsurface">Microsoft Surface Elite</option>
-                            <option value="lenovoideapad5">Lenovo IdeaPad Duet 5</option>
-                            <option value="dellxps13">Dell XPS 13</option>
-                        </select>
-                        <div class="spec-item blue">Name</div>
-                        <div class="spec-item blue">Display</div>
-                        <div class="spec-item blue">Processor</div>
-                        <div class="spec-item blue">Memory</div>
-                        <div class="spec-item blue">Battery Life</div>
-                        <div class="spec-item blue">Graphic Card</div>
-                        <div class="spec-item red">Price</div>
-                    </div>
-                </div>
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <img src="/images/img1.png" alt="Laptop 3">
-                    <div class="specs">
-                        <select class="laptop-selector" id="laptop3" onchange="updateComparison()">
-                            <option value="">Select Laptop 3</option>
-                            <option value="macbookair">Macbook Air M2</option>
-                            <option value="samsungnotebook">Galaxy Book 4 Pro</option>
-                            <option value="asusvivobook">Asus Vivobook 16</option>
-                            <option value="microsoftsurface">Microsoft Surface Elite</option>
-                            <option value="lenovoideapad5">Lenovo IdeaPad Duet 5</option>
-                            <option value="dellxps13">Dell XPS 13</option>
-                        </select>
-                        <div class="spec-item blue">Name</div>
-                        <div class="spec-item blue">Display</div>
-                        <div class="spec-item blue">Processor</div>
-                        <div class="spec-item blue">Memory</div>
-                        <div class="spec-item blue">Battery Life</div>
-                        <div class="spec-item blue">Graphic Card</div>
-                        <div class="spec-item red">Price</div>
-                    </div>
-                </div>
+  <header>
+    <a href="index.html" class="logo">Best<span class="logo-dot">Match</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Mobiles</a></li>
+        <li><a href="tablet.html">Tablets</a></li>
+        <li><a href="laptop.html" class="active">Laptops</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <span class="ai-badge"><span class="ai-dot"></span> AI-Powered</span>
+      <h2>Compare Any <span>Laptop</span></h2>
+      <p>Search any laptop in the world — specs fetched live by AI, not a static database</p>
+    </section>
+
+    <div class="comparison-container">
+      <div class="product-comparison">
+
+        <!-- Card 1 -->
+        <div class="product-card">
+          <div class="card-header">
+            <div class="card-image-wrap">
+              <div class="placeholder-icon">💻</div>
             </div>
+            <div class="device-search-wrap">
+              <span class="search-icon">🔍</span>
+              <input class="device-search" type="text" placeholder="Search any laptop… e.g. MacBook Pro M4" autocomplete="off">
+              <div class="suggestions-list"></div>
+            </div>
+          </div>
+          <div class="card-specs"></div>
         </div>
-    </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 BestMatch. All rights reserved.</p>
-        </div>
-    </footer>
 
-    <script src="laptop.js"></script>
+        <!-- Card 2 -->
+        <div class="product-card">
+          <div class="card-header">
+            <div class="card-image-wrap">
+              <div class="placeholder-icon">💻</div>
+            </div>
+            <div class="device-search-wrap">
+              <span class="search-icon">🔍</span>
+              <input class="device-search" type="text" placeholder="Search any laptop… e.g. Dell XPS 15" autocomplete="off">
+              <div class="suggestions-list"></div>
+            </div>
+          </div>
+          <div class="card-specs"></div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="product-card">
+          <div class="card-header">
+            <div class="card-image-wrap">
+              <div class="placeholder-icon">💻</div>
+            </div>
+            <div class="device-search-wrap">
+              <span class="search-icon">🔍</span>
+              <input class="device-search" type="text" placeholder="Search any laptop… e.g. Asus ROG Zephyrus" autocomplete="off">
+              <div class="suggestions-list"></div>
+            </div>
+          </div>
+          <div class="card-specs"></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 BestMatch — Specs powered by AI · Compare smarter</p>
+  </footer>
+
+  <script src="bestmatch.js"></script>
 </body>
 </html>
