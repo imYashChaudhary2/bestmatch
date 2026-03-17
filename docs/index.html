@@ -759,9 +759,9 @@
         <div class="tab-bar">
             <button class="tab on" onclick="switchTab('overview',this)">Overview</button>
             <button class="tab" onclick="switchTab('files',this)">Files</button>
-            <button class="tab" onclick="switchTab('setup',this)">Setup</button>
             <button class="tab" onclick="switchTab('demo',this)">Live demo</button>
             <button class="tab" onclick="switchTab('fixes',this)">Bug fixes</button>
+            <button class="tab" onclick="switchTab('contact',this)">Contact</button>
         </div>
 
         <div class="panel on" id="panel-overview">
@@ -850,52 +850,7 @@
             </div>
         </div>
 
-        <div class="panel" id="panel-setup">
-            <div class="card">
-                <div class="card-title">Deploy to surge.sh</div>
-                <div class="deploy-step">
-                    <div class="dnum">1</div>
-                    <div style="flex:1">
-                        <div class="dlabel">Add your API key</div>
-                        <div class="codeblock">
-                            <div class="clabel">bestmatch.js &mdash; line 3</div>
-                            <button class="cbtn" id="cb1">copy</button>
-                            <pre>const ANTHROPIC_API_KEY = <span style="color:var(--acc)">'sk-ant-api03-...'</span>;</pre>
-                        </div>
-                    </div>
-                </div>
-                <div class="deploy-step">
-                    <div class="dnum">2</div>
-                    <div style="flex:1">
-                        <div class="dlabel">Remove old files from git</div>
-                        <div class="codeblock">
-                            <button class="cbtn" id="cb2">copy</button>
-                            <pre>git rm index.css index.js \
-       laptop.css laptop.js \
-       tablet.css tablet.js
-git commit -m <span style="color:var(--acc)">"chore: remove old files"</span>
-git push</pre>
-                        </div>
-                    </div>
-                </div>
-                <div class="deploy-step">
-                    <div class="dnum">3</div>
-                    <div style="flex:1">
-                        <div class="dlabel">Deploy</div>
-                        <div class="codeblock">
-                            <button class="cbtn" id="cb3">copy</button>
-                            <pre>surge . bestmatch.surge.sh</pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-title">On claude.ai</div>
-                <div style="font-size:12px;color:var(--txt2);line-height:1.7">No API key needed &mdash; claude.ai
-                    injects it automatically via the <code
-                        style="background:var(--bg3);border:0.5px solid var(--brd);border-radius:4px;padding:1px 5px;font-size:10px;color:var(--acc)">anthropic-dangerous-direct-browser-access</code>
-                    header. The 285-device local DB works fully offline with zero API calls.</div>
-            </div>
+        <div class="panel" id="panel-contact">
             <div class="card">
                 <div class="card-title">Contact</div>
                 <a class="contact-link" href="mailto:YashChaudhary016210@gmail.com"><span class="cl-ico">&#9993;</span>
@@ -1010,9 +965,7 @@ git push</pre>
             showDemo('iPhone 16 Pro Max');
             document.getElementById('file-detail').innerHTML = FILE_INFO['bestmatch.js'];
             document.getElementById('file-detail').classList.add('on');
-            document.getElementById('cb1').onclick = function () { cp(this, "const ANTHROPIC_API_KEY = 'sk-ant-api03-...'"); };
-            document.getElementById('cb2').onclick = function () { cp(this, 'git rm index.css index.js laptop.css laptop.js tablet.css tablet.js\ngit commit -m "chore: remove old per-page CSS and JS files"\ngit push'); };
-            document.getElementById('cb3').onclick = function () { cp(this, 'surge . bestmatch.surge.sh'); };
+
         });
     </script>
 </body>
