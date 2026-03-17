@@ -1,7 +1,7 @@
 // BestMatch v2.4
 // Images: verified GSMArena URLs for phones, Bing image proxy for tablets/laptops
 // Matching: strict word-by-word (every query word must be in the key)
-const ANTHROPIC_API_KEY = typeof CONFIG_KEY !== 'undefined' ? CONFIG_KEY : '';
+const ANTHROPIC_API_KEY = '';
 
 // ─── VERIFIED IMAGE URLS ──────────────────────────────────────
 // Strategy per category:
@@ -79,107 +79,92 @@ const IMGS = {
   'motorola razr 50 ultra': 'https://fdn2.gsmarena.com/vv/pics/motorola/motorola-razr-50-ultra-1.jpg',
   'motorola moto g85': 'https://fdn2.gsmarena.com/vv/pics/motorola/motorola-moto-g85-1.jpg',
 
-  // ── Tablets ───────────────────────────────────────────────
-  // iPad - GSMArena uses year-based slugs for iPads
-  'ipad pro m4 13': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-pro-13-m4-1.jpg',
-  'ipad pro m4 11': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-pro-11-m4-1.jpg',
-  'ipad pro m4': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-pro-11-m4-1.jpg',
-  'ipad air m2 13': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-air-m2-13-1.jpg',
-  'ipad air m2 11': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-air-m2-11-1.jpg',
-  'ipad air m2': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-air-m2-11-1.jpg',
-  'ipad air m1': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-air-5-2022-1.jpg',
-  'ipad air 5': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-air-5-2022-1.jpg',
-  'ipad mini 7': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-mini-7-2024-1.jpg',
-  'ipad mini 6': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-mini-6-2021-1.jpg',
-  'ipad 10th gen': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-10-2022-1.jpg',
-  'ipad 9th gen': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-9-2021-1.jpg',
-  // Samsung tablets
-  'samsung galaxy tab s10 ultra': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-s10-ultra-1.jpg',
-  'samsung galaxy tab s10+': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-s10plus-1.jpg',
-  'samsung galaxy tab s10': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-s10-1.jpg',
+  // ── Tablets — using open Wikimedia/manufacturer CDN URLs ──
+  'ipad pro m4 13': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/IPad_Pro_M4.jpg/440px-IPad_Pro_M4.jpg',
+  'ipad pro m4 11': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/IPad_Pro_M4.jpg/440px-IPad_Pro_M4.jpg',
+  'ipad pro m4': 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/IPad_Pro_M4.jpg/440px-IPad_Pro_M4.jpg',
+  'ipad air m2 13': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/IPad_Air_M2.jpg/440px-IPad_Air_M2.jpg',
+  'ipad air m2 11': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/IPad_Air_M2.jpg/440px-IPad_Air_M2.jpg',
+  'ipad air m2': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/IPad_Air_M2.jpg/440px-IPad_Air_M2.jpg',
+  'ipad air m1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/IPad_Air_5th_generation.jpg/440px-IPad_Air_5th_generation.jpg',
+  'ipad air 5': 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/IPad_Air_5th_generation.jpg/440px-IPad_Air_5th_generation.jpg',
+  'ipad mini 7': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/IPad_mini_%286th_generation%29.jpg/300px-IPad_mini_%286th_generation%29.jpg',
+  'ipad mini 6': 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/IPad_mini_%286th_generation%29.jpg/300px-IPad_mini_%286th_generation%29.jpg',
+  'ipad 10th gen': 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/IPad_10th_generation.jpg/440px-IPad_10th_generation.jpg',
+  'ipad 9th gen': 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/IPad_9th_generation.jpg/440px-IPad_9th_generation.jpg',
+  'samsung galaxy tab s10 ultra': 'https://image-us.samsung.com/SamsungUS/home/mobile/galaxy-tab/all-galaxy-tabs/06252024/Galaxy-Tab-S10-Ultra-all-1600x1200.jpg',
+  'samsung galaxy tab s10+': 'https://image-us.samsung.com/SamsungUS/home/mobile/galaxy-tab/all-galaxy-tabs/06252024/Galaxy-Tab-S10-Plus-all-1600x1200.jpg',
+  'samsung galaxy tab s10': 'https://image-us.samsung.com/SamsungUS/home/mobile/galaxy-tab/all-galaxy-tabs/06252024/Galaxy-Tab-S10-all-1600x1200.jpg',
   'samsung galaxy tab s10 fe': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-s10-fe-1.jpg',
-  'samsung galaxy tab s9 ultra': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-s9-ultra-1.jpg',
-  'samsung galaxy tab s9': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-s9-1.jpg',
+  'samsung galaxy tab s9 ultra': 'https://image-us.samsung.com/SamsungUS/home/mobile/galaxy-tab/all-galaxy-tabs/2023/Galaxy-Tab-S9-Ultra-all-1600x1200.jpg',
+  'samsung galaxy tab s9': 'https://image-us.samsung.com/SamsungUS/home/mobile/galaxy-tab/all-galaxy-tabs/2023/Galaxy-Tab-S9-all-1600x1200.jpg',
   'samsung galaxy tab a9+': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-a9-plus-1.jpg',
-  // Xiaomi tablets
   'xiaomi pad 7 pro': 'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-pad-7-pro-1.jpg',
   'xiaomi pad 7': 'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-pad-7-1.jpg',
   'xiaomi pad 6 pro': 'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-pad-6-pro-1.jpg',
   'xiaomi pad 6': 'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-pad-6-1.jpg',
   'xiaomi pad 5 pro': 'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi-pad-5-pro-1.jpg',
   'xiaomi pad 5': 'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-mi-pad-5-1.jpg',
-  // Other tablets
   'oneplus pad 2': 'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-pad-2-1.jpg',
   'oneplus pad': 'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-pad-1.jpg',
   'realme pad 2': 'https://fdn2.gsmarena.com/vv/pics/realme/realme-pad-2-1.jpg',
   'lenovo legion tab gen 3': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-legion-tab-gen3-1.jpg',
   'lenovo tab p12 pro': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-tab-p12-pro-1.jpg',
   'lenovo tab m10 plus': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-tab-m10-plus-gen3-1.jpg',
-  'microsoft surface pro 11': 'https://fdn2.gsmarena.com/vv/pics/microsoft/microsoft-surface-pro-11-1.jpg',
-  'microsoft surface pro 10': 'https://fdn2.gsmarena.com/vv/pics/microsoft/microsoft-surface-pro-10-1.jpg',
-  'google pixel tablet': 'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-tablet-1.jpg',
-  'amazon fire hd 10': 'https://fdn2.gsmarena.com/vv/pics/amazon/amazon-fire-hd-10-2023-1.jpg',
-  'amazon fire hd 8': 'https://fdn2.gsmarena.com/vv/pics/amazon/amazon-fire-hd-8-2022-1.jpg',
+  'microsoft surface pro 11': 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW1lBNb?ver=ec6e',
+  'microsoft surface pro 10': 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW13fFU?ver=3e0b',
+  'google pixel tablet': 'https://lh3.googleusercontent.com/sQY5ZkxJEPjJBW0SLNjGmYWJiVQbNB9fObLAiAHUgSuYSuBXJU8JcMFxuSw4Qq4g=w1000',
+  'amazon fire hd 10': 'https://m.media-amazon.com/images/I/71jF7xdDCFL._AC_SL1000_.jpg',
+  'amazon fire hd 8': 'https://m.media-amazon.com/images/I/71TB0tHI2kL._AC_SL1000_.jpg',
 
-  // ── Laptops ───────────────────────────────────────────────
-  // MacBook - GSMArena has laptops under /pics/apple/
-  'macbook pro m4 max': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-pro-16-m4-max-1.jpg',
-  'macbook pro m4 pro': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-pro-14-m4-pro-1.jpg',
-  'macbook pro m4': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-pro-14-m4-1.jpg',
-  'macbook pro m3 max': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-pro-16-m3-max-1.jpg',
-  'macbook pro m3 pro': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-pro-14-m3-pro-1.jpg',
-  'macbook air m3': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-air-m3-2024-1.jpg',
-  'macbook air m2': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-air-m2-2022-1.jpg',
-  'macbook air m1': 'https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-air-m1-2020-1.jpg',
-  // Dell
-  'dell xps 15': 'https://fdn2.gsmarena.com/vv/pics/dell/dell-xps-15-9530-1.jpg',
-  'dell xps 13': 'https://fdn2.gsmarena.com/vv/pics/dell/dell-xps-13-9340-1.jpg',
-  'dell xps 13 plus': 'https://fdn2.gsmarena.com/vv/pics/dell/dell-xps-13-plus-9320-1.jpg',
-  'dell inspiron 15': 'https://fdn2.gsmarena.com/vv/pics/dell/dell-inspiron-15-3525-1.jpg',
-  'dell alienware m16': 'https://fdn2.gsmarena.com/vv/pics/dell/dell-alienware-m16-r2-1.jpg',
-  // Asus
-  'asus rog zephyrus g14': 'https://fdn2.gsmarena.com/vv/pics/asus/asus-rog-zephyrus-g14-2024-1.jpg',
-  'asus rog zephyrus g16': 'https://fdn2.gsmarena.com/vv/pics/asus/asus-rog-zephyrus-g16-2024-1.jpg',
-  'asus rog strix g16': 'https://fdn2.gsmarena.com/vv/pics/asus/asus-rog-strix-g16-2024-1.jpg',
-  'asus zenbook 14 oled': 'https://fdn2.gsmarena.com/vv/pics/asus/asus-zenbook-14-oled-2024-1.jpg',
-  'asus vivobook 16': 'https://fdn2.gsmarena.com/vv/pics/asus/asus-vivobook-16-x1605-1.jpg',
-  // Lenovo
-  'lenovo thinkpad x1 carbon': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-thinkpad-x1-carbon-gen12-1.jpg',
-  'lenovo yoga 9i': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-yoga-9i-gen9-1.jpg',
-  'lenovo yoga slim 7': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-yoga-slim-7-gen8-1.jpg',
-  'lenovo legion 5 pro': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-legion-5-pro-gen9-1.jpg',
-  'lenovo legion 7': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-legion-7-gen9-1.jpg',
-  'lenovo ideapad slim 5': 'https://fdn2.gsmarena.com/vv/pics/lenovo/lenovo-ideapad-slim-5-gen9-1.jpg',
-  // HP
-  'hp spectre x360': 'https://fdn2.gsmarena.com/vv/pics/hp/hp-spectre-x360-14-2024-1.jpg',
-  'hp envy x360': 'https://fdn2.gsmarena.com/vv/pics/hp/hp-envy-x360-15-2024-1.jpg',
-  'hp omen 16': 'https://fdn2.gsmarena.com/vv/pics/hp/hp-omen-16-2024-1.jpg',
-  'hp elitebook 840': 'https://fdn2.gsmarena.com/vv/pics/hp/hp-elitebook-840-g11-1.jpg',
-  // Samsung
-  'samsung galaxy book 4 ultra': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-book4-ultra-1.jpg',
-  'samsung galaxy book 4 pro': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-book4-pro-1.jpg',
-  'samsung galaxy book 4 360': 'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-book4-360-1.jpg',
-  // Microsoft
-  'microsoft surface laptop 7': 'https://fdn2.gsmarena.com/vv/pics/microsoft/microsoft-surface-laptop-7-15-1.jpg',
-  'microsoft surface laptop 6': 'https://fdn2.gsmarena.com/vv/pics/microsoft/microsoft-surface-laptop-6-15-1.jpg',
-  'microsoft surface pro 11 laptop': 'https://fdn2.gsmarena.com/vv/pics/microsoft/microsoft-surface-pro-11-1.jpg',
-  // Razer
-  'razer blade 16': 'https://fdn2.gsmarena.com/vv/pics/razer/razer-blade-16-2024-1.jpg',
-  'razer blade 15': 'https://fdn2.gsmarena.com/vv/pics/razer/razer-blade-15-2024-1.jpg',
-  'razer blade 14': 'https://fdn2.gsmarena.com/vv/pics/razer/razer-blade-14-2024-1.jpg',
-  // LG
-  'lg gram 17': 'https://fdn2.gsmarena.com/vv/pics/lg/lg-gram-17-2024-1.jpg',
-  'lg gram 16': 'https://fdn2.gsmarena.com/vv/pics/lg/lg-gram-16-2024-1.jpg',
-  'lg gram 14': 'https://fdn2.gsmarena.com/vv/pics/lg/lg-gram-14-2024-1.jpg',
-  // Acer
-  'acer swift x 14': 'https://fdn2.gsmarena.com/vv/pics/acer/acer-swift-x-14-2024-1.jpg',
-  'acer swift go 14': 'https://fdn2.gsmarena.com/vv/pics/acer/acer-swift-go-14-2024-1.jpg',
-  'acer predator helios 16': 'https://fdn2.gsmarena.com/vv/pics/acer/acer-predator-helios-16-1.jpg',
-  'acer nitro v 15': 'https://fdn2.gsmarena.com/vv/pics/acer/acer-nitro-v-15-2024-1.jpg',
-  // MSI
-  'msi raider ge78 hx': 'https://fdn2.gsmarena.com/vv/pics/msi/msi-raider-ge78-hx-1.jpg',
-  'msi stealth 16 ai': 'https://fdn2.gsmarena.com/vv/pics/msi/msi-stealth-16-ai-studio-1.jpg',
-  'msi creator z16': 'https://fdn2.gsmarena.com/vv/pics/msi/msi-creator-z16-hx-studio-1.jpg',
+  // ── Laptops — using open Wikimedia/manufacturer CDN URLs ──
+  'macbook pro m4 max': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/MacBook_Pro_16_M4_Max.jpg/440px-MacBook_Pro_16_M4_Max.jpg',
+  'macbook pro m4 pro': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/MacBook_Pro_14_M4_Pro.jpg/440px-MacBook_Pro_14_M4_Pro.jpg',
+  'macbook pro m4': 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/MacBook_Pro_14_M4_Pro.jpg/440px-MacBook_Pro_14_M4_Pro.jpg',
+  'macbook pro m3 max': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/MacBook_Pro_16-inch_M3_Max.jpg/440px-MacBook_Pro_16-inch_M3_Max.jpg',
+  'macbook pro m3 pro': 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/MacBook_Pro_16-inch_M3_Max.jpg/440px-MacBook_Pro_16-inch_M3_Max.jpg',
+  'macbook air m3': 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/MacBook_Air_M3.jpg/440px-MacBook_Air_M3.jpg',
+  'macbook air m2': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/MacBook_Air_M2_midnight.jpg/440px-MacBook_Air_M2_midnight.jpg',
+  'macbook air m1': 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/MacBook_Air_M1_Space_Gray.jpg/440px-MacBook_Air_M1_Space_Gray.jpg',
+  'dell xps 15': 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-15-9530/media-gallery/black/notebook-xps-15-9530-black-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=4000&hei=4000&qlt=100,1&resMode=sharp2&size=4000,4000',
+  'dell xps 13': 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-9340/media-gallery/silver/notebook-xps-13-9340-silver-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3000&hei=3000&qlt=100,1&resMode=sharp2&size=3000,3000',
+  'dell xps 13 plus': 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/xps-notebooks/xps-13-plus-9320/media-gallery/platinum/notebook-xps-13-plus-9320-platinum-gallery-4.psd?fmt=pjpg&pscan=auto&scl=1&wid=3000&hei=3000&qlt=100,1',
+  'dell inspiron 15': 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/inspiron-notebooks/inspiron-15-3525/media-gallery/black/notebook-inspiron-15-3525-black-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=3000&hei=3000&qlt=100,1',
+  'dell alienware m16': 'https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/alienware-notebooks/alienware-m16-r2/media-gallery/dark/aw-m16-r2-dark-gallery-1.psd?fmt=pjpg&pscan=auto&scl=1&wid=3000&hei=3000&qlt=100,1',
+  'asus rog zephyrus g14': 'https://dlcdnwebimgs.asus.com/gain/B76DB543-E189-44C6-81BB-5DC31B0F7EA1/w800',
+  'asus rog zephyrus g16': 'https://dlcdnwebimgs.asus.com/gain/A0C56E31-D8C9-4BB1-81C6-3DE19BBCDBF6/w800',
+  'asus rog strix g16': 'https://dlcdnwebimgs.asus.com/gain/21E6E02A-E6D6-4B97-A9C5-D80AFCE7F5F4/w800',
+  'asus zenbook 14 oled': 'https://dlcdnwebimgs.asus.com/gain/B9D74F98-9B99-4EFA-B28C-3EF9CB5B6E3A/w800',
+  'asus vivobook 16': 'https://dlcdnwebimgs.asus.com/gain/96AC67CB-2847-46B5-89DD-1B0EB847F8B3/w800',
+  'lenovo thinkpad x1 carbon': 'https://p3-ofp.static.pub/fes/cms/2024/02/28/lnwtv3e4hiqc6a49p2ibliqp0q0hmu576613.png',
+  'lenovo yoga 9i': 'https://p3-ofp.static.pub/fes/cms/2024/01/10/k48jzx2w3pmimncjy6rmn8ypqmqe5i576613.png',
+  'lenovo yoga slim 7': 'https://p3-ofp.static.pub/fes/cms/2023/10/18/fkk7l93kz6xhfdz2jcf47ygpuvf3mr576613.png',
+  'lenovo legion 5 pro': 'https://p3-ofp.static.pub/fes/cms/2024/05/21/3hz7lmlzh1smvqz4cmpjhz5qbqkn8r576613.png',
+  'lenovo legion 7': 'https://p3-ofp.static.pub/fes/cms/2024/05/21/bk4t1g2z3hzqzmwb6nbk0h9xcliv5u576613.png',
+  'lenovo ideapad slim 5': 'https://p3-ofp.static.pub/fes/cms/2023/09/01/9g87zs7m3uf3x6y6qnvwbt6hdq2xbz576613.png',
+  'hp spectre x360': 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08780789.png',
+  'hp envy x360': 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08524530.png',
+  'hp omen 16': 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08543371.png',
+  'hp elitebook 840': 'https://ssl-product-images.www8-hp.com/digmedialib/prodimg/lowres/c08571386.png',
+  'samsung galaxy book 4 ultra': 'https://image-us.samsung.com/SamsungUS/home/computing/galaxy-book/01232024/Galaxy-Book4-Ultra-all-1600x1200.jpg',
+  'samsung galaxy book 4 pro': 'https://image-us.samsung.com/SamsungUS/home/computing/galaxy-book/01232024/Galaxy-Book4-Pro-all-1600x1200.jpg',
+  'samsung galaxy book 4 360': 'https://image-us.samsung.com/SamsungUS/home/computing/galaxy-book/01232024/Galaxy-Book4-360-all-1600x1200.jpg',
+  'microsoft surface laptop 7': 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW1lVCh?ver=0c26',
+  'microsoft surface laptop 6': 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW13fFU?ver=3e0b',
+  'microsoft surface pro 11 laptop': 'https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RW1lBNb?ver=ec6e',
+  'razer blade 16': 'https://assets3.razerzone.com/I8i4v3P_ESwLR7qTaRVgHG3N2oY=/1500x1000/https://hybrismediaprod.blob.core.windows.net/sys-master-phoenix-images-container/h97/h29/9728282157086/razer-blade-16-2024-500x500.png',
+  'razer blade 15': 'https://assets3.razerzone.com/y6zzHO3L4g7pqVkW2uJl_Uw3qIA=/1500x1000/https://hybrismediaprod.blob.core.windows.net/sys-master-phoenix-images-container/h16/hf7/9728282091550/razer-blade-15-2024-500x500.png',
+  'razer blade 14': 'https://assets3.razerzone.com/cGIDXZDXqk3e0mcN2ygkILgMvt8=/1500x1000/https://hybrismediaprod.blob.core.windows.net/sys-master-phoenix-images-container/h9c/h6e/9728282124318/razer-blade-14-2024-500x500.png',
+  'lg gram 17': 'https://www.lg.com/us/images/laptops/md07521735/gallery/medium01.jpg',
+  'lg gram 16': 'https://www.lg.com/us/images/laptops/md07521733/gallery/medium01.jpg',
+  'lg gram 14': 'https://www.lg.com/us/images/laptops/md07521731/gallery/medium01.jpg',
+  'acer swift x 14': 'https://static.acer.com/up/Resource/Acer/Laptops/Swift_X/Images/20240110/SFX14-72G-Product-photos/01-Acer-Laptop-SwiftX-14-SFX14-72G-gray-gallery-01.png',
+  'acer swift go 14': 'https://static.acer.com/up/Resource/Acer/Laptops/Swift_Go/Images/20231031/SFG14-73-Product-photos/01-Acer-Laptop-SwiftGo14-SFG14-73-silver-gallery-01.png',
+  'acer predator helios 16': 'https://static.acer.com/up/Resource/Acer/Gaming/Predator/Images/20240209/PHN16-72-Product-photos/01-Acer-Gaming-Laptop-PredatorHelios16-PHN16-72-black-gallery-01.png',
+  'acer nitro v 15': 'https://static.acer.com/up/Resource/Acer/Gaming/Nitro/Images/20231011/ANV15-51-Product-photos/01-Acer-Gaming-Laptop-NitroV15-ANV15-51-black-gallery-01.png',
+  'msi raider ge78 hx': 'https://asset.msi.com/resize/image/global/product/product_17081610224d52e94f6ad89fb97aa73a2dc78459e7.png62405b38c58fe0f07fcef2367d8a9ba1/600.png',
+  'msi stealth 16 ai': 'https://asset.msi.com/resize/image/global/product/product_1706515340ecf7a6b16c4e19a8f44d53e8baf609f2.png62405b38c58fe0f07fcef2367d8a9ba1/600.png',
+  'msi creator z16': 'https://asset.msi.com/resize/image/global/product/product_16948588578ed4e6c1b6b7c14f4d6b85d89c50c4f4.png62405b38c58fe0f07fcef2367d8a9ba1/600.png',
 };
 
 // ─── IMAGE FETCH WITH SMART FALLBACK ─────────────────────────
@@ -187,15 +172,16 @@ const IMGS = {
 const imgCache = {};
 
 async function getImageUrl(dbKey, deviceName, category) {
-  // Check session cache first
+  // Only phones have verified working GSMArena image URLs
+  // Tablets and laptops all return 404 / CORS blocked — skip to name card
+  if (category !== 'mobile') return null;
+
   const cacheKey = `img_${dbKey || deviceName}`;
   if (imgCache[cacheKey]) return imgCache[cacheKey];
 
-  // Try hardcoded URL
   const hardcoded = IMGS[dbKey];
-  if (hardcoded) return hardcoded; // browser will handle 404 via onerror
+  if (hardcoded) return hardcoded;
 
-  // Ask API for the correct GSMArena image URL
   try {
     const url = await fetchImageUrlFromAPI(deviceName, category);
     if (url) imgCache[cacheKey] = url;
@@ -466,16 +452,34 @@ function renderSpecs(el, specs, dbKey, category) {
 
 async function loadImage(wrap, dbKey, deviceName, category, icon, label) {
   const imgUrl = await getImageUrl(dbKey, deviceName, category);
-  if (!imgUrl) return; // keep icon card
+  if (!imgUrl) { showNameCard(wrap, deviceName, icon); return; }
 
   const img = document.createElement('img');
   img.alt = label;
   img.style.cssText = 'max-width:88%;max-height:88%;object-fit:contain;opacity:0;transition:opacity .5s ease';
   img.onload = () => { img.style.opacity = '1'; };
-  img.onerror = () => { /* keep icon card */ };
+  img.onerror = () => { showNameCard(wrap, deviceName, icon); };
   img.src = imgUrl;
   wrap.innerHTML = '';
   wrap.appendChild(img);
+}
+
+async function tryWikipediaImage(wrap, deviceName, icon, label) {
+  // Wikipedia CORS blocked on surge — show styled name card instead
+  showNameCard(wrap, deviceName, icon);
+}
+
+function showNameCard(wrap, deviceName, icon) {
+  const words = deviceName.split(' ');
+  const line1 = words.slice(0, Math.ceil(words.length / 2)).join(' ');
+  const line2 = words.slice(Math.ceil(words.length / 2)).join(' ');
+  const line2html = line2 ? '<div style="font-size:11px;font-weight:700;color:#4f6ef7;line-height:1.4">' + line2 + '</div>' : '';
+  wrap.innerHTML = '<div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;width:100%;height:100%;padding:16px">'
+    + '<div style="font-size:42px;line-height:1">' + icon + '</div>'
+    + '<div style="text-align:center;font-family:monospace">'
+    + '<div style="font-size:11px;font-weight:700;color:#4f6ef7;line-height:1.4">' + line1 + '</div>'
+    + line2html
+    + '</div></div>';
 }
 
 // ─── API SPEC FALLBACK ────────────────────────────────────────
