@@ -167,58 +167,185 @@ const IMGS = {
   'msi creator z16': 'https://asset.msi.com/resize/image/global/product/product_16948588578ed4e6c1b6b7c14f4d6b85d89c50c4f4.png62405b38c58fe0f07fcef2367d8a9ba1/600.png',
 };
 
+// ─── MULTI-IMAGE MAP (up to 3 angles per device) ────────────
+const IMGS_MULTI = {
+  'iphone 16 pro max': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-max-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-max-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-max-3.jpg',
+  ],
+  'iphone 16 pro': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-3.jpg',
+  ],
+  'iphone 16 plus': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-plus-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-plus-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-plus-3.jpg',
+  ],
+  'iphone 16': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-3.jpg',
+  ],
+  'iphone 15 pro max': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-3.jpg',
+  ],
+  'iphone 15 pro': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-3.jpg',
+  ],
+  'iphone 15': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-3.jpg',
+  ],
+  'iphone 14 pro max': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-3.jpg',
+  ],
+  'iphone 14 pro': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-2.jpg',
+  ],
+  'iphone 13 pro max': [
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-3.jpg',
+  ],
+  'samsung galaxy s25 ultra': [
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-3.jpg',
+  ],
+  'samsung galaxy s25+': [
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25plus-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25plus-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25plus-3.jpg',
+  ],
+  'samsung galaxy s25': [
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-3.jpg',
+  ],
+  'samsung galaxy s24 ultra': [
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-3.jpg',
+  ],
+  'samsung galaxy z fold 6': [
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-fold6-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-fold6-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-fold6-3.jpg',
+  ],
+  'samsung galaxy z flip 6': [
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-flip6-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-flip6-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-flip6-3.jpg',
+  ],
+  'google pixel 9 pro xl': [
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-3.jpg',
+  ],
+  'google pixel 9 pro': [
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-3.jpg',
+  ],
+  'google pixel 9': [
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-3.jpg',
+  ],
+  'oneplus 13': [
+    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-13-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-13-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-13-3.jpg',
+  ],
+  'oneplus 12': [
+    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-12-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-12-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-12-3.jpg',
+  ],
+  'xiaomi 15 pro': [
+    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-15-pro-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-15-pro-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-15-pro-3.jpg',
+  ],
+  'nothing phone 3': [
+    'https://fdn2.gsmarena.com/vv/pics/nothing/nothing-phone3-1.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/nothing/nothing-phone3-2.jpg',
+    'https://fdn2.gsmarena.com/vv/pics/nothing/nothing-phone3-3.jpg',
+  ],
+};
+
 // ─── IMAGE FETCH WITH SMART FALLBACK ─────────────────────────
 // For any device: try IMGS map → on 404/error → ask API for correct URL → cache it
 const imgCache = {};
 
-async function getImageUrl(dbKey, deviceName, category) {
-  // Only phones have verified working GSMArena image URLs
-  // Tablets and laptops all return 404 / CORS blocked — skip to name card
-  if (category !== 'mobile') return null;
+// ─── UNSPLASH IMAGE SEARCH ───────────────────────────────────
+// Key set in config.js: const UNSPLASH_KEY = 'your-access-key';
+const UNSPLASH_API_KEY = typeof UNSPLASH_KEY !== 'undefined' ? UNSPLASH_KEY : '';
+const imgSearchCache = {};
 
-  const cacheKey = `img_${dbKey || deviceName}`;
-  if (imgCache[cacheKey]) return imgCache[cacheKey];
-
-  const hardcoded = IMGS[dbKey];
-  if (hardcoded) return hardcoded;
+async function fetchUnsplashImages(query, count = 3) {
+  const cacheKey = 'unsplash_' + query;
+  if (imgSearchCache[cacheKey]) return imgSearchCache[cacheKey];
+  if (!UNSPLASH_API_KEY) return [];
 
   try {
-    const url = await fetchImageUrlFromAPI(deviceName, category);
-    if (url) imgCache[cacheKey] = url;
-    return url;
-  } catch { return null; }
+    const q = encodeURIComponent(query);
+    const url = 'https://api.unsplash.com/search/photos?query=' + q
+      + '&per_page=' + count + '&orientation=squarish&order_by=relevant'
+      + '&client_id=' + UNSPLASH_API_KEY;
+
+    const res = await fetch(url);
+    if (!res.ok) return [];
+    const data = await res.json();
+    const urls = (data.results || []).map(p => p.urls.regular).filter(Boolean);
+    imgSearchCache[cacheKey] = urls;
+    return urls;
+  } catch { return []; }
 }
 
-async function fetchImageUrlFromAPI(deviceName, category) {
-  const prompt = `Return ONLY a raw JSON object with one key "imgUrl" containing the correct GSMArena image URL for "${deviceName}".
+async function getImageUrls(dbKey, deviceName, category) {
+  const cacheKey = 'imgs_' + (dbKey || deviceName);
+  if (imgSearchCache[cacheKey]) return imgSearchCache[cacheKey];
 
-GSMArena image URL format: https://fdn2.gsmarena.com/vv/pics/{brand}/{brand}-{model-slug}-1.jpg
+  // 1. Try multi-image map (instant, no API call)
+  const multi = dbKey && IMGS_MULTI[dbKey];
+  if (multi && multi.length) {
+    imgSearchCache[cacheKey] = multi;
+    return multi;
+  }
 
-Examples:
-- iPhone 16 Pro Max → https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-max-1.jpg  
-- Samsung Galaxy S25 Ultra → https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-1.jpg
-- iPad Pro M4 11-inch → https://fdn2.gsmarena.com/vv/pics/apple/apple-ipad-pro-11-m4-1.jpg
-- MacBook Air M3 → https://fdn2.gsmarena.com/vv/pics/apple/apple-macbook-air-m3-2024-1.jpg
-- Dell XPS 15 → https://fdn2.gsmarena.com/vv/pics/dell/dell-xps-15-9530-1.jpg
-- Samsung Galaxy Tab S10 Ultra → https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-tab-s10-ultra-1.jpg
+  // 2. Try single hardcoded GSMArena URL
+  const single = dbKey && IMGS[dbKey];
+  if (single) {
+    // Also fetch Unsplash for 2 more angles
+    const searchQuery = deviceName + ' smartphone';
+    const extra = await fetchUnsplashImages(searchQuery, 2);
+    const combined = [single, ...extra].slice(0, 3);
+    imgSearchCache[cacheKey] = combined;
+    return combined;
+  }
 
-Return only: {"imgUrl":"https://fdn2.gsmarena.com/..."}`;
+  // 3. Unsplash search — works for ALL categories (phones, tablets, laptops)
+  const catSuffix = category === 'laptop' ? 'laptop' : category === 'tablet' ? 'tablet' : 'smartphone';
+  const searchQuery = deviceName + ' ' + catSuffix;
+  const urls = await fetchUnsplashImages(searchQuery, 3);
+  if (urls.length) {
+    imgSearchCache[cacheKey] = urls;
+    return urls;
+  }
 
-  const headers = { 'Content-Type': 'application/json', 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' };
-  if (ANTHROPIC_API_KEY) headers['x-api-key'] = ANTHROPIC_API_KEY;
-
-  const res = await fetch('https://api.anthropic.com/v1/messages', {
-    method: 'POST', headers,
-    body: JSON.stringify({
-      model: 'claude-haiku-4-5', max_tokens: 100,
-      messages: [{ role: 'user', content: prompt }]
-    })
-  });
-  if (!res.ok) return null;
-  const d = await res.json();
-  const raw = d.content.map(b => b.text || '').join('').replace(/```json|```/g, '').trim();
-  const parsed = JSON.parse(raw);
-  return parsed.imgUrl || null;
+  return [];
 }
 
 // ─── LOCAL DATABASE (120+ devices) ───────────────────────────
@@ -522,17 +649,72 @@ function renderSpecs(el, specs, dbKey, category) {
 }
 
 async function loadImage(wrap, dbKey, deviceName, category, icon, label) {
-  const imgUrl = await getImageUrl(dbKey, deviceName, category);
-  if (!imgUrl) { showNameCard(wrap, deviceName, icon); return; }
+  // Show icon immediately while loading
+  showNameCard(wrap, deviceName, icon);
 
-  const img = document.createElement('img');
-  img.alt = label;
-  img.style.cssText = 'max-width:88%;max-height:88%;object-fit:contain;opacity:0;transition:opacity .5s ease';
-  img.onload = () => { img.style.opacity = '1'; };
-  img.onerror = () => { showNameCard(wrap, deviceName, icon); };
-  img.src = imgUrl;
+  const urls = await getImageUrls(dbKey, deviceName, category);
+  if (!urls || !urls.length) return; // keep name card
+
+  if (urls.length > 1) {
+    buildSlideshow(wrap, urls, label, icon, deviceName);
+  } else {
+    const img = document.createElement('img');
+    img.alt = label;
+    img.style.cssText = 'width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .5s ease';
+    img.onload = () => { img.style.opacity = '1'; };
+    img.onerror = () => { /* keep name card */ };
+    img.src = urls[0];
+    wrap.innerHTML = '';
+    wrap.appendChild(img);
+  }
+}
+
+function buildSlideshow(wrap, urls, label, icon, deviceName) {
+  let current = 0;
+  let timer = null;
+
+  const slideshow = document.createElement('div');
+  slideshow.className = 'img-slideshow';
+
+  // Create images
+  const imgs = urls.map((url, i) => {
+    const img = document.createElement('img');
+    img.alt = label;
+    img.src = url;
+    if (i === 0) img.classList.add('active');
+    img.onerror = () => { img.style.display = 'none'; };
+    return img;
+  });
+  imgs.forEach(img => slideshow.appendChild(img));
+
+  // Dots
+  const dotsWrap = document.createElement('div');
+  dotsWrap.className = 'img-dots';
+  const dots = urls.map((_, i) => {
+    const d = document.createElement('div');
+    d.className = 'img-dot' + (i === 0 ? ' active' : '');
+    d.onclick = (e) => { e.stopPropagation(); goTo(i); resetTimer(); };
+    return d;
+  });
+  dots.forEach(d => dotsWrap.appendChild(d));
+  slideshow.appendChild(dotsWrap);
+
+  function goTo(idx) {
+    imgs[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = idx;
+    imgs[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => { goTo((current + 1) % urls.length); }, 3000);
+  }
+
   wrap.innerHTML = '';
-  wrap.appendChild(img);
+  wrap.appendChild(slideshow);
+  resetTimer();
 }
 
 async function tryWikipediaImage(wrap, deviceName, icon, label) {
