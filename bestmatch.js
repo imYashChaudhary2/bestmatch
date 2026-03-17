@@ -1,7 +1,7 @@
 // BestMatch v2.4
 // Images: verified GSMArena URLs for phones, Bing image proxy for tablets/laptops
 // Matching: strict word-by-word (every query word must be in the key)
-const ANTHROPIC_API_KEY = '';
+const ANTHROPIC_API_KEY = typeof CONFIG_KEY !== 'undefined' ? CONFIG_KEY : '';
 
 // ─── VERIFIED IMAGE URLS ──────────────────────────────────────
 // Strategy per category:
@@ -210,7 +210,7 @@ Return only: {"imgUrl":"https://fdn2.gsmarena.com/..."}`;
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST', headers,
     body: JSON.stringify({
-      model: 'claude-haiku-4-5-20251001', max_tokens: 100,
+      model: 'claude-haiku-4-5', max_tokens: 100,
       messages: [{ role: 'user', content: prompt }]
     })
   });
@@ -492,9 +492,13 @@ Price: "Starting at $X,XXX". Unknown: "N/A".`;
   if (ANTHROPIC_API_KEY) headers['x-api-key'] = ANTHROPIC_API_KEY;
   const res = await fetch('https://api.anthropic.com/v1/messages', {
     method: 'POST', headers,
-    body: JSON.stringify({ model: 'claude-sonnet-4-20250514', max_tokens: 800, messages: [{ role: 'user', content: prompt }] })
+    body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 800, messages: [{ role: 'user', content: prompt }] })
   });
-  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  if (!res.ok) {
+    const err = await res.json().catch(() => ({}));
+    console.error('API error details:', JSON.stringify(err));
+    throw new Error('HTTP ' + res.status + ': ' + (err.error && err.error.message || 'unknown'));
+  }
   const d = await res.json();
   return JSON.parse(d.content.map(b => b.text || '').join('').replace(/```json|```/g, '').trim());
 }
