@@ -68,5 +68,5 @@ To run locally or deploy elsewhere, add your API key:
 ---
 
 ## 📬 Contact
-- Email: [Email](imyash.chaudhary2@gmail.com)
-- Website: [BestMatch](https://bestmch.surge.sh/)
+- Email: [imYash.Chaudhary2@gmail.com](mailto:imYash.Chaudhary2@gmail.com)
+- Website: [https://bestmch.surge.sh/](https://bestmch.surge.sh/)
