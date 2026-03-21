@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BestMatch — Laptop Comparison</title>
   <link rel="stylesheet" href="shared.css">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-  <link rel="manifest" href="site.webmanifest">
+  <link rel="icon" type="image/x-icon" href="/favicon.svg">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body data-category="laptop">
@@ -29,6 +29,38 @@
       <h2>Compare Any <span>Laptop</span></h2>
       <p>Search any laptop in the world — specs fetched live by AI, not a static database</p>
     </section>
+
+    <!-- UNIFIED SEARCH BAR -->
+    <div class="unified-search-section">
+      <div class="unified-search-wrap">
+        <span style="font-size:18px;opacity:0.4">💻</span>
+        <input class="unified-search-input" id="unified-input" type="text"
+          placeholder="e.g. MacBook Air M3, Dell XPS 15, Asus Zephyrus G14..." autocomplete="off">
+        <button class="unified-search-btn" onclick="unifiedSearch()">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="11" cy="11" r="8" />
+            <path d="m21 21-4.35-4.35" />
+          </svg>
+          Compare
+        </button>
+        <div class="unified-suggestions" id="unified-sugg"></div>
+      </div>
+      <div class="unified-slots" id="unified-slots">
+        <div class="unified-slot" id="slot-0">
+          <div class="slot-dot"></div><span class="slot-name">Slot 1 — empty</span>
+        </div>
+        <div class="unified-slot" id="slot-1">
+          <div class="slot-dot"></div><span class="slot-name">Slot 2 — empty</span>
+        </div>
+        <div class="unified-slot" id="slot-2">
+          <div class="slot-dot"></div><span class="slot-name">Slot 3 — empty</span>
+        </div>
+      </div>
+      <div class="unified-hints"
+        style="display:flex;align-items:center;gap:8px;margin-top:10px;flex-wrap:wrap;justify-content:center">
+        <span class="unified-hint-label">Try:</span>
+      </div>
+    </div>
 
     <div class="comparison-container">
       <div class="product-comparison">
@@ -84,6 +116,58 @@
       </div>
     </div>
   </main>
+
+  <!-- AI COMPARE SECTION -->
+  <div class="ai-compare-section" id="ai-section" style="display:none">
+    <div class="ai-prompt-area">
+      <div class="ai-prompt-label">
+        <span class="ai-dot"></span>
+        AI Compare — What matters most to you?
+      </div>
+      <div class="ai-prompt-row">
+        <textarea class="ai-prompt-input" id="ai-prompt"
+          placeholder="e.g. best camera performance… best for gaming… best battery life… best value for money…"
+          rows="1"></textarea>
+        <button class="ai-analyze-btn" id="ai-ask-btn" onclick="askAI()">
+          <span id="ai-btn-text">Analyze</span>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="22" y1="2" x2="11" y2="13" />
+            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="ai-result-grid" id="ai-result-grid" style="display:none">
+      <div class="ai-result-header">
+        <div class="ai-result-title">
+          <span class="ai-dot"></span>
+          AI Verdict — <span id="ai-result-query"></span>
+        </div>
+        <div class="ai-result-actions">
+          <button class="ai-action-btn" onclick="shareComparison()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="18" cy="5" r="3" />
+              <circle cx="6" cy="12" r="3" />
+              <circle cx="18" cy="19" r="3" />
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+            </svg>
+            Share
+          </button>
+          <button class="ai-action-btn" onclick="downloadPDF()">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            PDF
+          </button>
+        </div>
+      </div>
+      <div class="ai-cards-grid" id="ai-cards"></div>
+      <div class="ai-verdict-summary" id="ai-verdict"></div>
+    </div>
+  </div>
 
   <footer>
     <p>© 2025 BestMatch — Specs powered by AI · Compare smarter</p>
