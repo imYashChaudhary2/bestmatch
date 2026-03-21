@@ -797,6 +797,9 @@ async function loadDevice(el, name, category) {
       const specs = await fetchFromAPI(name, category);
       renderSpecs(el, specs, null, category);
     }
+    // Show AI Compare section whenever any card loads a device
+    var aiSection = document.getElementById('ai-section');
+    if (aiSection) aiSection.style.display = 'block';
   } catch (e) {
     console.error(e);
     renderError(el, `"${name}" not found. Try an exact model name.`);
