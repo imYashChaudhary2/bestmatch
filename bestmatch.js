@@ -167,188 +167,217 @@ const IMGS = {
   'msi creator z16': 'https://asset.msi.com/resize/image/global/product/product_16948588578ed4e6c1b6b7c14f4d6b85d89c50c4f4.png62405b38c58fe0f07fcef2367d8a9ba1/600.png',
 };
 
-// ─── MULTI-IMAGE MAP (up to 3 angles per device) ────────────
-const IMGS_MULTI = {
-  'iphone 16 pro max': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-max-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-max-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-max-3.jpg',
-  ],
-  'iphone 16 pro': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-pro-3.jpg',
-  ],
-  'iphone 16 plus': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-plus-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-plus-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-plus-3.jpg',
-  ],
-  'iphone 16': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-3.jpg',
-  ],
-  'iphone 15 pro max': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-max-3.jpg',
-  ],
-  'iphone 15 pro': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-pro-3.jpg',
-  ],
-  'iphone 15': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-3.jpg',
-  ],
-  'iphone 14 pro max': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-max-3.jpg',
-  ],
-  'iphone 14 pro': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-pro-2.jpg',
-  ],
-  'iphone 13 pro max': [
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-pro-max-3.jpg',
-  ],
-  'samsung galaxy s25 ultra': [
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-3.jpg',
-  ],
-  'samsung galaxy s25+': [
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25plus-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25plus-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25plus-3.jpg',
-  ],
-  'samsung galaxy s25': [
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-3.jpg',
-  ],
-  'samsung galaxy s24 ultra': [
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-ultra-3.jpg',
-  ],
-  'samsung galaxy z fold 6': [
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-fold6-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-fold6-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-fold6-3.jpg',
-  ],
-  'samsung galaxy z flip 6': [
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-flip6-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-flip6-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-z-flip6-3.jpg',
-  ],
-  'google pixel 9 pro xl': [
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-3.jpg',
-  ],
-  'google pixel 9 pro': [
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-3.jpg',
-  ],
-  'google pixel 9': [
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-3.jpg',
-  ],
-  'oneplus 13': [
-    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-13-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-13-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-13-3.jpg',
-  ],
-  'oneplus 12': [
-    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-12-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-12-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/oneplus/oneplus-12-3.jpg',
-  ],
-  'xiaomi 15 pro': [
-    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-15-pro-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-15-pro-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-15-pro-3.jpg',
-  ],
-  'nothing phone 3': [
-    'https://fdn2.gsmarena.com/vv/pics/nothing/nothing-phone3-1.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/nothing/nothing-phone3-2.jpg',
-    'https://fdn2.gsmarena.com/vv/pics/nothing/nothing-phone3-3.jpg',
-  ],
+// ─── IMAGE SYSTEM ─────────────────────────────────────────────
+// Priority 1: LOCAL_IMGS — self-hosted /images/ folder (same origin, zero CORS)
+// Priority 2: Wikimedia Commons — free, CORS open, fallback for unlisted devices
+
+const LOCAL_IMGS = {
+  'iphone 17 pro max': ['images/iphone-17-pro-max-1.png', 'images/iphone-17-pro-max-2.png', 'images/iphone-17-pro-max-3.png', 'images/iphone-17-pro-max-4.png'],
+  'iphone 17 pro': ['images/iphone-17-pro-1.png', 'images/iphone-17-pro-2.png', 'images/iphone-17-pro-3.png', 'images/iphone-17-pro-4.png'],
+  'iphone 17 air': ['images/iphone-17-1.png', 'images/iphone-17-2.png', 'images/iphone-17-3.png', 'images/iphone-17-4.png'],
+  'iphone 17': ['images/iphone-17-1.png', 'images/iphone-17-2.png', 'images/iphone-17-3.png', 'images/iphone-17-4.png'],
+  'iphone 17e': ['images/iphone-17e-1.png', 'images/iphone-17e-2.png', 'images/iphone-17e-3.png', 'images/iphone-17e-4.png'],
+  'iphone 16 pro max': ['images/iphone-16-pro-max-1.png', 'images/iphone-16-pro-max-2.png', 'images/iphone-16-pro-max-3.png', 'images/iphone-16-pro-max-4.png'],
+  'iphone 16 pro': ['images/iphone-16-pro-1.png', 'images/iphone-16-pro-2.png', 'images/iphone-16-pro-3.png', 'images/iphone-16-pro-4.png'],
+  'iphone 16 plus': ['images/iphone-16-plus-1.png', 'images/iphone-16-plus-2.png', 'images/iphone-16-plus-3.png', 'images/iphone-16-plus-4.png'],
+  'iphone 16': ['images/iphone-16-1.png', 'images/iphone-16-2.png', 'images/iphone-16-3.png', 'images/iphone-16-4.png'],
+  'iphone 15 pro max': ['images/iphone-15-pro-max-1.png', 'images/iphone-15-pro-max-2.png', 'images/iphone-15-pro-max-3.png', 'images/iphone-15-pro-max-4.png'],
+  'iphone 15 pro': ['images/iphone-15-pro-1.png', 'images/iphone-15-pro-2.png', 'images/iphone-15-pro-3.png', 'images/iphone-15-pro-4.png'],
+  'iphone 15 plus': ['images/iphone-15-plus-1.png', 'images/iphone-15-plus-2.png', 'images/iphone-15-plus-3.png', 'images/iphone-15-plus-4.png'],
+  'iphone 15': ['images/iphone-15-1.png', 'images/iphone-15-2.png', 'images/iphone-15-3.png', 'images/iphone-15-4.png'],
+  'iphone 14 pro max': ['images/iphone-14-pro-max-1.png', 'images/iphone-14-pro-max-2.png', 'images/iphone-14-pro-max-3.png', 'images/iphone-14-pro-max-4.png'],
+  'iphone 14 pro': ['images/iphone-14-pro-1.png', 'images/iphone-14-pro-2.png', 'images/iphone-14-pro-3.png', 'images/iphone-14-pro-4.png'],
+  'iphone 14': ['images/iphone-14-1.png', 'images/iphone-14-2.png', 'images/iphone-14-3.png', 'images/iphone-14-4.png'],
+  'iphone 13 pro max': ['images/iphone-13-pro-max-1.png', 'images/iphone-13-pro-max-2.png', 'images/iphone-13-pro-max-3.png', 'images/iphone-13-pro-max-4.png'],
+  'iphone 13 pro': ['images/iphone-13-pro-1.png', 'images/iphone-13-pro-2.png', 'images/iphone-13-pro-3.png', 'images/iphone-13-pro-4.png'],
+  'iphone 13': ['images/iphone-13-1.png', 'images/iphone-13-2.png', 'images/iphone-13-3.png', 'images/iphone-13-4.png'],
+  'ipad pro m4 13': ['images/ipad-pro-m4-1.png', 'images/ipad-pro-m4-2.png', 'images/ipad-pro-m4-3.png', 'images/ipad-pro-m4-4.png'],
+  'ipad pro m4 11': ['images/ipad-pro-m4-1.png', 'images/ipad-pro-m4-2.png', 'images/ipad-pro-m4-3.png', 'images/ipad-pro-m4-4.png'],
+  'ipad pro m4': ['images/ipad-pro-m4-1.png', 'images/ipad-pro-m4-2.png', 'images/ipad-pro-m4-3.png', 'images/ipad-pro-m4-4.png'],
+  'ipad air m2 13': ['images/ipad-air-m2-1.png', 'images/ipad-air-m2-2.png', 'images/ipad-air-m2-3.png', 'images/ipad-air-m2-4.png'],
+  'ipad air m2 11': ['images/ipad-air-m2-1.png', 'images/ipad-air-m2-2.png', 'images/ipad-air-m2-3.png', 'images/ipad-air-m2-4.png'],
+  'ipad air m2': ['images/ipad-air-m2-1.png', 'images/ipad-air-m2-2.png', 'images/ipad-air-m2-3.png', 'images/ipad-air-m2-4.png'],
+  'ipad mini 7': ['images/ipad-mini-7-1.png', 'images/ipad-mini-7-2.png', 'images/ipad-mini-7-3.png', 'images/ipad-mini-7-4.png'],
+  'ipad mini 6': ['images/ipad-mini-6-1.png', 'images/ipad-mini-6-2.png', 'images/ipad-mini-6-3.png', 'images/ipad-mini-6-4.png'],
+  'ipad 10th gen': ['images/ipad-10th-gen-1.png', 'images/ipad-10th-gen-2.png', 'images/ipad-10th-gen-3.png', 'images/ipad-10th-gen-4.png'],
+  'macbook pro m4 max': ['images/macbook-pro-m4-1.png', 'images/macbook-pro-m4-2.png', 'images/macbook-pro-m4-3.png', 'images/macbook-pro-m4-4.png'],
+  'macbook pro m4 pro': ['images/macbook-pro-m4-1.png', 'images/macbook-pro-m4-2.png', 'images/macbook-pro-m4-3.png', 'images/macbook-pro-m4-4.png'],
+  'macbook pro m4': ['images/macbook-pro-m4-1.png', 'images/macbook-pro-m4-2.png', 'images/macbook-pro-m4-3.png', 'images/macbook-pro-m4-4.png'],
+  'macbook pro m3 max': ['images/macbook-pro-m3-max-1.png', 'images/macbook-pro-m3-max-2.png', 'images/macbook-pro-m3-max-3.png', 'images/macbook-pro-m3-max-4.png'],
+  'macbook pro m3 pro': ['images/macbook-pro-m3-max-1.png', 'images/macbook-pro-m3-max-2.png', 'images/macbook-pro-m3-max-3.png', 'images/macbook-pro-m3-max-4.png'],
+  'macbook air m3': ['images/macbook-air-m3-1.png', 'images/macbook-air-m3-2.png', 'images/macbook-air-m3-3.png', 'images/macbook-air-m3-4.png'],
+  'macbook air m2': ['images/macbook-air-m2-1.png', 'images/macbook-air-m2-2.png', 'images/macbook-air-m2-3.png', 'images/macbook-air-m2-4.png'],
+  'macbook air m1': ['images/macbook-air-m1-1.png', 'images/macbook-air-m1-2.png', 'images/macbook-air-m1-3.png', 'images/macbook-air-m1-4.png'],
+  'samsung galaxy s25 ultra': ['images/samsung-galaxy-s25-ultra-1.png', 'images/samsung-galaxy-s25-ultra-2.png', 'images/samsung-galaxy-s25-ultra-3.png', 'images/samsung-galaxy-s25-ultra-4.png'],
+  'samsung galaxy s25+': ['images/samsung-galaxy-s25-plus-1.png', 'images/samsung-galaxy-s25-plus-2.png', 'images/samsung-galaxy-s25-plus-3.png'],
+  'samsung galaxy s25': ['images/samsung-galaxy-s25-1.png', 'images/samsung-galaxy-s25-2.png', 'images/samsung-galaxy-s25-3.png'],
+  'samsung galaxy s24 ultra': ['images/samsung-galaxy-s24-ultra-1.png', 'images/samsung-galaxy-s24-ultra-2.png', 'images/samsung-galaxy-s24-ultra-3.png', 'images/samsung-galaxy-s24-ultra-4.png'],
+  'samsung galaxy s24+': ['images/samsung-galaxy-s24-plus-1.png', 'images/samsung-galaxy-s24-plus-2.png', 'images/samsung-galaxy-s24-plus-3.png', 'images/samsung-galaxy-s24-plus-4.png'],
+  'samsung galaxy s24': ['images/samsung-galaxy-s24-1.png', 'images/samsung-galaxy-s24-2.png', 'images/samsung-galaxy-s24-3.png', 'images/samsung-galaxy-s24-4.png'],
+  'samsung galaxy s23 ultra': ['images/samsung-galaxy-s23-ultra-1.png', 'images/samsung-galaxy-s23-ultra-2.png', 'images/samsung-galaxy-s23-ultra-3.png', 'images/samsung-galaxy-s23-ultra-4.png'],
+  'samsung galaxy z fold 6': ['images/samsung-galaxy-z-fold-6-1.png', 'images/samsung-galaxy-z-fold-6-2.png', 'images/samsung-galaxy-z-fold-6-3.png', 'images/samsung-galaxy-z-fold-6-4.png'],
+  'samsung galaxy z fold 5': ['images/samsung-galaxy-z-fold-5-1.png', 'images/samsung-galaxy-z-fold-5-2.png', 'images/samsung-galaxy-z-fold-5-3.png', 'images/samsung-galaxy-z-fold-5-4.png'],
+  'samsung galaxy z flip 6': ['images/samsung-galaxy-z-flip-6-1.png', 'images/samsung-galaxy-z-flip-6-2.jpg', 'images/samsung-galaxy-z-flip-6-3.png', 'images/samsung-galaxy-z-flip-6-4.png'],
+  'samsung galaxy z flip 5': ['images/samsung-galaxy-z-flip-5-1.png', 'images/samsung-galaxy-z-flip-5-2.png', 'images/samsung-galaxy-z-flip-5-3.png', 'images/samsung-galaxy-z-flip-5-4.png'],
+  'samsung galaxy a56': ['images/samsung-galaxy-a56-1.png', 'images/samsung-galaxy-a56-2.png', 'images/samsung-galaxy-a56-3.png', 'images/samsung-galaxy-a56-4.png'],
+  'samsung galaxy a36': ['images/samsung-galaxy-a36-1.png', 'images/samsung-galaxy-a36-2.png', 'images/samsung-galaxy-a36-3.png', 'images/samsung-galaxy-a36-4.png'],
+  'samsung galaxy a55': ['images/samsung-galaxy-a55-1.png', 'images/samsung-galaxy-a55-2.png', 'images/samsung-galaxy-a55-3.png', 'images/samsung-galaxy-a55-4.png'],
+  'samsung galaxy a35': ['images/samsung-galaxy-a35-1.png', 'images/samsung-galaxy-a35-2.png', 'images/samsung-galaxy-a35-3.png', 'images/samsung-galaxy-a35-4.png'],
+  'samsung galaxy tab s10 ultra': ['images/samsung-galaxy-tab-s10-ultra-1.png', 'images/samsung-galaxy-tab-s10-ultra-2.png', 'images/samsung-galaxy-tab-s10-ultra-3.png', 'images/samsung-galaxy-tab-s10-ultra-4.png'],
+  'samsung galaxy tab s10+': ['images/samsung-galaxy-tab-s10-plus-1.png', 'images/samsung-galaxy-tab-s10-plus-2.png', 'images/samsung-galaxy-tab-s10-plus-3.png', 'images/samsung-galaxy-tab-s10-plus-4.png'],
+  'samsung galaxy tab s10': ['images/samsung-galaxy-tab-s10-1.png', 'images/samsung-galaxy-tab-s10-2.png', 'images/samsung-galaxy-tab-s10-3.png'],
+  'samsung galaxy tab s9': ['images/samsung-galaxy-tab-s9-1.png', 'images/samsung-galaxy-tab-s9-2.png', 'images/samsung-galaxy-tab-s9-3.png', 'images/samsung-galaxy-tab-s9-4.png'],
+  'samsung galaxy book 4 ultra': ['images/samsung-galaxy-book-4-ultra-1.png', 'images/samsung-galaxy-book-4-ultra-2.png', 'images/samsung-galaxy-book-4-ultra-3.png', 'images/samsung-galaxy-book-4-ultra-4.png'],
+  'samsung galaxy book 4 pro': ['images/samsung-galaxy-book-4-ultra-1.png', 'images/samsung-galaxy-book-4-ultra-2.png', 'images/samsung-galaxy-book-4-ultra-3.png', 'images/samsung-galaxy-book-4-ultra-4.png'],
+  'samsung galaxy book 4 360': ['images/samsung-galaxy-book-4-ultra-1.png', 'images/samsung-galaxy-book-4-ultra-2.png', 'images/samsung-galaxy-book-4-ultra-3.png', 'images/samsung-galaxy-book-4-ultra-4.png'],
+  'google pixel 9 pro xl': ['images/google-pixel-9-pro-xl-1.png', 'images/google-pixel-9-pro-xl-2.png', 'images/google-pixel-9-pro-xl-3.png', 'images/google-pixel-9-pro-xl-4.png'],
+  'google pixel 9 pro fold': ['images/google-pixel-9-pro-xl-1.png', 'images/google-pixel-9-pro-xl-2.png', 'images/google-pixel-9-pro-xl-3.png', 'images/google-pixel-9-pro-xl-4.png'],
+  'google pixel 9 pro': ['images/google-pixel-9-pro-1.png', 'images/google-pixel-9-pro-2.png', 'images/google-pixel-9-pro-3.png', 'images/google-pixel-9-pro-4.png'],
+  'google pixel 9a': ['images/google-pixel-9-1.png', 'images/google-pixel-9-2.png', 'images/google-pixel-9-3.png', 'images/google-pixel-9-4.png'],
+  'google pixel 9': ['images/google-pixel-9-1.png', 'images/google-pixel-9-2.png', 'images/google-pixel-9-3.png', 'images/google-pixel-9-4.png'],
+  'google pixel 8 pro': ['images/google-pixel-8-pro-1.png', 'images/google-pixel-8-pro-2.png', 'images/google-pixel-8-pro-3.png', 'images/google-pixel-8-pro-4.png'],
+  'google pixel 8a': ['images/google-pixel-8-1.png', 'images/google-pixel-8-2.png', 'images/google-pixel-8-3.png', 'images/google-pixel-8-4.png'],
+  'google pixel 8': ['images/google-pixel-8-1.png', 'images/google-pixel-8-2.png', 'images/google-pixel-8-3.png', 'images/google-pixel-8-4.png'],
+  'google pixel tablet': ['images/google-pixel-tablet-1.jpg'],
+  'oneplus 15': ['images/oneplus-15-1.png', 'images/oneplus-15-2.png', 'images/oneplus-15-3.png'],
+  'oneplus 13': ['images/oneplus-13-1.png', 'images/oneplus-13-2.png', 'images/oneplus-13-3.png', 'images/oneplus-13-4.png'],
+  'oneplus 12': ['images/oneplus-12-1.png', 'images/oneplus-12-2.png', 'images/oneplus-12-3.jpg', 'images/oneplus-12-4.png'],
+  'oneplus 12r': ['images/oneplus-12-1.png', 'images/oneplus-12-2.png', 'images/oneplus-12-3.jpg', 'images/oneplus-12-4.png'],
+  'oneplus nord 5': ['images/oneplus-nord-5-1.png', 'images/oneplus-nord-5-2.png', 'images/oneplus-nord-5-3.png', 'images/oneplus-nord-5-4.png'],
+  'oneplus nord 4': ['images/oneplus-nord-4-1.png', 'images/oneplus-nord-4-2.png', 'images/oneplus-nord-4-3.png', 'images/oneplus-nord-4-4.png'],
+  'oneplus nord 3': ['images/oneplus-nord-4-1.png', 'images/oneplus-nord-4-2.png', 'images/oneplus-nord-4-3.png', 'images/oneplus-nord-4-4.png'],
+  'oneplus pad 2': ['images/oneplus-pad-2-1.png', 'images/oneplus-pad-2-2.png', 'images/oneplus-pad-2-3.png', 'images/oneplus-pad-2-4.png'],
+  'oneplus pad': ['images/oneplus-pad-1.png', 'images/oneplus-pad-2.png', 'images/oneplus-pad-3.png', 'images/oneplus-pad-4.png'],
+  'xiaomi 15 pro': ['images/xiaomi-15-pro-1.png', 'images/xiaomi-15-pro-2.png', 'images/xiaomi-15-pro-3.png', 'images/xiaomi-15-pro-4.png'],
+  'xiaomi 14 ultra': ['images/xiaomi-15-pro-1.png', 'images/xiaomi-15-pro-2.png', 'images/xiaomi-15-pro-3.png', 'images/xiaomi-15-pro-4.png'],
+  'xiaomi 14': ['images/xiaomi-15-pro-1.png', 'images/xiaomi-15-pro-2.png', 'images/xiaomi-15-pro-3.png', 'images/xiaomi-15-pro-4.png'],
+  'redmi note 15 pro': ['images/xiaomi-15-pro-1.png', 'images/xiaomi-15-pro-2.png', 'images/xiaomi-15-pro-3.png', 'images/xiaomi-15-pro-4.png'],
+  'redmi note 14 pro+': ['images/redmi-note-14-pro-plus-1.png', 'images/redmi-note-14-pro-plus-2.png', 'images/redmi-note-14-pro-plus-3.png', 'images/redmi-note-14-pro-plus-4.png'],
+  'redmi note 14 pro': ['images/redmi-note-14-pro-1.png', 'images/redmi-note-14-pro-2.png', 'images/redmi-note-14-pro-3.png', 'images/redmi-note-14-pro-4.png'],
+  'redmi note 14': ['images/redmi-note-14-pro-1.png', 'images/redmi-note-14-pro-2.png', 'images/redmi-note-14-pro-3.png', 'images/redmi-note-14-pro-4.png'],
+  'redmi note 13 pro+': ['images/redmi-note-13-pro-plus-1.png', 'images/redmi-note-13-pro-plus-2.png', 'images/redmi-note-13-pro-plus-3.jpg', 'images/redmi-note-13-pro-plus-4.png'],
+  'redmi note 13 pro': ['images/redmi-note-13-pro-plus-1.png', 'images/redmi-note-13-pro-plus-2.png', 'images/redmi-note-13-pro-plus-3.jpg', 'images/redmi-note-13-pro-plus-4.png'],
+  'redmi note 13': ['images/redmi-note-13-pro-plus-1.png', 'images/redmi-note-13-pro-plus-2.png', 'images/redmi-note-13-pro-plus-3.jpg', 'images/redmi-note-13-pro-plus-4.png'],
+  'redmi note 8': ['images/redmi-note-13-pro-plus-1.png', 'images/redmi-note-13-pro-plus-2.png', 'images/redmi-note-13-pro-plus-3.jpg', 'images/redmi-note-13-pro-plus-4.png'],
+  'redmi 13c': ['images/redmi-note-14-pro-1.png', 'images/redmi-note-14-pro-2.png', 'images/redmi-note-14-pro-3.png', 'images/redmi-note-14-pro-4.png'],
+  'redmi 14c': ['images/redmi-note-14-pro-1.png', 'images/redmi-note-14-pro-2.png', 'images/redmi-note-14-pro-3.png', 'images/redmi-note-14-pro-4.png'],
+  'nothing phone 3': ['images/nothing-phone-3-1.png', 'images/nothing-phone-3-2.png', 'images/nothing-phone-3-3.png'],
+  'nothing phone 2a plus': ['images/nothing-phone-2a-1.png', 'images/nothing-phone-2a-2.png', 'images/nothing-phone-2a-3.png', 'images/nothing-phone-2a-4.png'],
+  'nothing phone 2a': ['images/nothing-phone-2a-1.png', 'images/nothing-phone-2a-2.png', 'images/nothing-phone-2a-3.png', 'images/nothing-phone-2a-4.png'],
+  'nothing phone 2': ['images/nothing-phone-2a-1.png', 'images/nothing-phone-2a-2.png', 'images/nothing-phone-2a-3.png', 'images/nothing-phone-2a-4.png'],
+  'nothing phone 1': ['images/nothing-phone-2a-1.png', 'images/nothing-phone-2a-2.png', 'images/nothing-phone-2a-3.png', 'images/nothing-phone-2a-4.png'],
+  'vivo x200 pro': ['images/vivo-x200-pro-1.png', 'images/vivo-x200-pro-2.png', 'images/vivo-x200-pro-3.png', 'images/vivo-x200-pro-4.png'],
+  'vivo x200': ['images/vivo-x200-pro-1.png', 'images/vivo-x200-pro-2.png', 'images/vivo-x200-pro-3.png', 'images/vivo-x200-pro-4.png'],
+  'vivo x100 pro': ['images/vivo-x200-pro-1.png', 'images/vivo-x200-pro-2.png', 'images/vivo-x200-pro-3.png', 'images/vivo-x200-pro-4.png'],
+  'vivo v40 pro': ['images/vivo-v40-pro-1.png', 'images/vivo-v40-pro-2.png', 'images/vivo-v40-pro-3.png'],
+  'vivo v40': ['images/vivo-v40-1.png', 'images/vivo-v40-2.png', 'images/vivo-v40-3.png'],
+  'vivo v40e': ['images/vivo-v40-1.png', 'images/vivo-v40-2.png', 'images/vivo-v40-3.png'],
+  'vivo v30 pro': ['images/vivo-v40-pro-1.png', 'images/vivo-v40-pro-2.png', 'images/vivo-v40-pro-3.png'],
+  'vivo t3x': ['images/vivo-v40-1.png', 'images/vivo-v40-2.png', 'images/vivo-v40-3.png'],
+  'vivo t3 pro': ['images/vivo-v40-pro-1.png', 'images/vivo-v40-pro-2.png', 'images/vivo-v40-pro-3.png'],
+  'poco x7 pro': ['images/poco-x7-pro-1.jpg'],
+  'poco x7': ['images/poco-x7-1.jpg'],
+  'poco x6 pro': ['images/poco-x7-pro-1.jpg'],
+  'poco f6 pro': ['images/poco-f6-pro-1.jpg', 'images/poco-f6-pro-2.jpg', 'images/poco-f6-pro-3.jpg', 'images/poco-f6-pro-4.jpg'],
+  'poco f6': ['images/poco-f6-1.jpg'],
+  'poco m6 pro': ['images/poco-f6-1.jpg'],
+  'poco c65': ['images/poco-f6-1.jpg'],
+  'realme gt 7 pro': ['images/realme-gt-7-pro-1.png', 'images/realme-gt-7-pro-2.png', 'images/realme-gt-7-pro-3.png'],
+  'realme gt 6': ['images/realme-gt-7-pro-1.png', 'images/realme-gt-7-pro-2.png', 'images/realme-gt-7-pro-3.png'],
+  'realme 13 pro+': ['images/realme-13-pro-plus-1.png', 'images/realme-13-pro-plus-2.png', 'images/realme-13-pro-plus-3.jpg', 'images/realme-13-pro-plus-4.png'],
+  'realme 13 pro': ['images/realme-13-pro-1.png', 'images/realme-13-pro-2.png', 'images/realme-13-pro-3.jpg', 'images/realme-13-pro-4.png'],
+  'realme 13': ['images/realme-13-pro-1.png', 'images/realme-13-pro-2.png', 'images/realme-13-pro-3.jpg', 'images/realme-13-pro-4.png'],
+  'realme c75': ['images/realme-13-pro-1.png', 'images/realme-13-pro-2.png', 'images/realme-13-pro-3.jpg', 'images/realme-13-pro-4.png'],
+  'dell xps 15': ['images/dell-xps-15-1.png', 'images/dell-xps-15-2.png', 'images/dell-xps-15-3.png', 'images/dell-xps-15-4.png'],
+  'dell xps 13': ['images/dell-xps-13-1.png', 'images/dell-xps-13-2.png', 'images/dell-xps-13-3.png', 'images/dell-xps-13-4.png'],
+  'dell xps 13 plus': ['images/dell-xps-13-1.png', 'images/dell-xps-13-2.png', 'images/dell-xps-13-3.png', 'images/dell-xps-13-4.png'],
+  'dell alienware m16': ['images/dell-alienware-m16-1.png', 'images/dell-alienware-m16-2.png', 'images/dell-alienware-m16-3.png', 'images/dell-alienware-m16-4.png'],
+  'dell inspiron 15': ['images/dell-xps-15-1.png', 'images/dell-xps-15-2.png', 'images/dell-xps-15-3.png', 'images/dell-xps-15-4.png'],
+  'asus rog zephyrus g14': ['images/asus-rog-zephyrus-g14-1.png', 'images/asus-rog-zephyrus-g14-2.png', 'images/asus-rog-zephyrus-g14-3.png', 'images/asus-rog-zephyrus-g14-4.png'],
+  'asus rog zephyrus g16': ['images/asus-rog-zephyrus-g16-1.png', 'images/asus-rog-zephyrus-g16-2.png', 'images/asus-rog-zephyrus-g16-3.png', 'images/asus-rog-zephyrus-g16-4.png'],
+  'asus rog strix g16': ['images/asus-rog-zephyrus-g16-1.png', 'images/asus-rog-zephyrus-g16-2.png', 'images/asus-rog-zephyrus-g16-3.png', 'images/asus-rog-zephyrus-g16-4.png'],
+  'asus zenbook 14 oled': ['images/asus-zenbook-14-oled-1.png', 'images/asus-zenbook-14-oled-2.png', 'images/asus-zenbook-14-oled-3.png', 'images/asus-zenbook-14-oled-4.png'],
+  'asus vivobook 16': ['images/asus-zenbook-14-oled-1.png', 'images/asus-zenbook-14-oled-2.png', 'images/asus-zenbook-14-oled-3.png', 'images/asus-zenbook-14-oled-4.png'],
+  'lenovo thinkpad x1 carbon': ['images/lenovo-legion-5-pro-1.png', 'images/lenovo-legion-5-pro-2.png', 'images/lenovo-legion-5-pro-3.png', 'images/lenovo-legion-5-pro-4.png'],
+  'lenovo yoga 9i': ['images/lenovo-legion-5-pro-1.png', 'images/lenovo-legion-5-pro-2.png', 'images/lenovo-legion-5-pro-3.png', 'images/lenovo-legion-5-pro-4.png'],
+  'lenovo yoga slim 7': ['images/lenovo-legion-5-pro-1.png', 'images/lenovo-legion-5-pro-2.png', 'images/lenovo-legion-5-pro-3.png', 'images/lenovo-legion-5-pro-4.png'],
+  'lenovo legion 5 pro': ['images/lenovo-legion-5-pro-1.png', 'images/lenovo-legion-5-pro-2.png', 'images/lenovo-legion-5-pro-3.png', 'images/lenovo-legion-5-pro-4.png'],
+  'lenovo legion 7': ['images/lenovo-legion-7-1.png', 'images/lenovo-legion-7-2.png', 'images/lenovo-legion-7-3.png', 'images/lenovo-legion-7-4.png'],
+  'lenovo ideapad slim 5': ['images/lenovo-legion-5-pro-1.png', 'images/lenovo-legion-5-pro-2.png', 'images/lenovo-legion-5-pro-3.png', 'images/lenovo-legion-5-pro-4.png'],
+  'hp spectre x360': ['images/hp-spectre-x360-1.png', 'images/hp-spectre-x360-2.png', 'images/hp-spectre-x360-3.png', 'images/hp-spectre-x360-4.png'],
+  'hp envy x360': ['images/hp-spectre-x360-1.png', 'images/hp-spectre-x360-2.png', 'images/hp-spectre-x360-3.png', 'images/hp-spectre-x360-4.png'],
+  'hp omen 16': ['images/hp-omen-16-1.png', 'images/hp-omen-16-2.png', 'images/hp-omen-16-3.png'],
+  'hp elitebook 840': ['images/hp-spectre-x360-1.png', 'images/hp-spectre-x360-2.png', 'images/hp-spectre-x360-3.png', 'images/hp-spectre-x360-4.png'],
+  'razer blade 16': ['images/razer-blade-16-1.jpg'],
+  'razer blade 15': ['images/razer-blade-16-1.jpg'],
+  'razer blade 14': ['images/razer-blade-16-1.jpg'],
+  'microsoft surface laptop 7': ['images/microsoft-surface-laptop-6-1.png', 'images/microsoft-surface-laptop-6-2.png', 'images/microsoft-surface-laptop-6-3.png', 'images/microsoft-surface-laptop-6-4.png'],
+  'microsoft surface laptop 6': ['images/microsoft-surface-laptop-6-1.png', 'images/microsoft-surface-laptop-6-2.png', 'images/microsoft-surface-laptop-6-3.png', 'images/microsoft-surface-laptop-6-4.png'],
+  'microsoft surface pro 11': ['images/microsoft-surface-pro-11-1.png', 'images/microsoft-surface-pro-11-2.png', 'images/microsoft-surface-pro-11-3.png', 'images/microsoft-surface-pro-11-4.png'],
+  'microsoft surface pro 10': ['images/microsoft-surface-pro-11-1.png', 'images/microsoft-surface-pro-11-2.png', 'images/microsoft-surface-pro-11-3.png', 'images/microsoft-surface-pro-11-4.png'],
+  'acer swift x 14': ['images/asus-zenbook-14-oled-1.png', 'images/asus-zenbook-14-oled-2.png', 'images/asus-zenbook-14-oled-3.png', 'images/asus-zenbook-14-oled-4.png'],
+  'acer predator helios 16': ['images/asus-rog-zephyrus-g16-1.png', 'images/asus-rog-zephyrus-g16-2.png', 'images/asus-rog-zephyrus-g16-3.png', 'images/asus-rog-zephyrus-g16-4.png'],
+  'acer nitro v 15': ['images/lenovo-legion-5-pro-1.png', 'images/lenovo-legion-5-pro-2.png', 'images/lenovo-legion-5-pro-3.png', 'images/lenovo-legion-5-pro-4.png'],
+  'msi raider ge78 hx': ['images/lenovo-legion-7-1.png', 'images/lenovo-legion-7-2.png', 'images/lenovo-legion-7-3.png', 'images/lenovo-legion-7-4.png'],
+  'msi stealth 16 ai': ['images/lenovo-legion-7-1.png', 'images/lenovo-legion-7-2.png', 'images/lenovo-legion-7-3.png', 'images/lenovo-legion-7-4.png'],
+  'lg gram 17': ['images/asus-zenbook-14-oled-1.png', 'images/asus-zenbook-14-oled-2.png', 'images/asus-zenbook-14-oled-3.png', 'images/asus-zenbook-14-oled-4.png'],
+  'lg gram 16': ['images/asus-zenbook-14-oled-1.png', 'images/asus-zenbook-14-oled-2.png', 'images/asus-zenbook-14-oled-3.png', 'images/asus-zenbook-14-oled-4.png'],
+  'lg gram 14': ['images/asus-zenbook-14-oled-1.png', 'images/asus-zenbook-14-oled-2.png', 'images/asus-zenbook-14-oled-3.png', 'images/asus-zenbook-14-oled-4.png'],
 };
 
-// ─── IMAGE FETCH WITH SMART FALLBACK ─────────────────────────
-// For any device: try IMGS map → on 404/error → ask API for correct URL → cache it
-const imgCache = {};
-
-// ─── UNSPLASH IMAGE SEARCH ───────────────────────────────────
-// Key set in config.js: const UNSPLASH_KEY = 'your-access-key';
-const UNSPLASH_API_KEY = typeof UNSPLASH_KEY !== 'undefined' ? UNSPLASH_KEY : '';
+// ── Wikimedia Commons fallback ─────────────────────────────────
 const imgSearchCache = {};
 
-async function fetchUnsplashImages(query, count = 3) {
-  const cacheKey = 'unsplash_' + query;
-  if (imgSearchCache[cacheKey]) return imgSearchCache[cacheKey];
-  if (!UNSPLASH_API_KEY) return [];
-
+async function searchWikimediaCommons(deviceName) {
+  var ckey = 'wmc_' + deviceName.toLowerCase();
+  if (imgSearchCache[ckey]) return imgSearchCache[ckey];
   try {
-    const q = encodeURIComponent(query);
-    const url = 'https://api.unsplash.com/search/photos?query=' + q
-      + '&per_page=' + count + '&orientation=squarish&order_by=relevant'
-      + '&client_id=' + UNSPLASH_API_KEY;
-
-    const res = await fetch(url);
-    if (!res.ok) return [];
-    const data = await res.json();
-    const urls = (data.results || []).map(p => p.urls.regular).filter(Boolean);
-    imgSearchCache[cacheKey] = urls;
-    return urls;
-  } catch { return []; }
+    var url = 'https://commons.wikimedia.org/w/api.php'
+      + '?action=query&generator=search&gsrnamespace=6'
+      + '&gsrsearch=' + encodeURIComponent(deviceName)
+      + '&gsrlimit=12&prop=imageinfo&iiprop=url|size'
+      + '&iiurlwidth=900&format=json&origin=*';
+    var res = await fetch(url);
+    if (!res.ok) throw new Error();
+    var data = await res.json();
+    var pages = data.query && data.query.pages ? Object.values(data.query.pages) : [];
+    var tokens = deviceName.toLowerCase().split(' ').filter(function (t) { return t.length > 1; });
+    var skip = ['logo', 'icon', 'flag', 'diagram', 'map', 'chart', 'graph', 'symbol', 'badge',
+      'screenshot', 'box', 'packaging', 'wallpaper', 'svg'];
+    var urls = pages.filter(function (p) {
+      var ii = p.imageinfo && p.imageinfo[0];
+      if (!ii || !ii.url) return false;
+      var u = ii.url.toLowerCase();
+      if (!u.match(/\.(jpg|jpeg|png)(\?|$)/i)) return false;
+      if (ii.width && ii.width < 300) return false;
+      var title = (p.title || '').toLowerCase();
+      for (var i = 0; i < skip.length; i++) {
+        if (title.indexOf(skip[i]) !== -1) return false;
+      }
+      var hits = tokens.filter(function (t) { return title.indexOf(t) !== -1; }).length;
+      return hits >= Math.ceil(tokens.length * 0.5);
+    }).map(function (p) {
+      return p.imageinfo[0].thumburl || p.imageinfo[0].url;
+    }).filter(Boolean);
+    imgSearchCache[ckey] = urls.slice(0, 4);
+    return imgSearchCache[ckey];
+  } catch (e) { return []; }
 }
 
 async function getImageUrls(dbKey, deviceName, category) {
-  const cacheKey = 'imgs_' + (dbKey || deviceName);
-  if (imgSearchCache[cacheKey]) return imgSearchCache[cacheKey];
-
-  // 1. Try multi-image map (instant, no API call)
-  const multi = dbKey && IMGS_MULTI[dbKey];
-  if (multi && multi.length) {
-    imgSearchCache[cacheKey] = multi;
-    return multi;
-  }
-
-  // 2. Try single hardcoded GSMArena URL
-  const single = dbKey && IMGS[dbKey];
-  if (single) {
-    // Also fetch Unsplash for 2 more angles
-    const searchQuery = deviceName + ' smartphone';
-    const extra = await fetchUnsplashImages(searchQuery, 2);
-    const combined = [single, ...extra].slice(0, 3);
-    imgSearchCache[cacheKey] = combined;
-    return combined;
-  }
-
-  // 3. Unsplash search — works for ALL categories (phones, tablets, laptops)
-  const catSuffix = category === 'laptop' ? 'laptop' : category === 'tablet' ? 'tablet' : 'smartphone';
-  const searchQuery = deviceName + ' ' + catSuffix;
-  const urls = await fetchUnsplashImages(searchQuery, 3);
-  if (urls.length) {
-    imgSearchCache[cacheKey] = urls;
-    return urls;
-  }
-
-  return [];
+  // 1. Local /images/ folder — instant, same origin, zero CORS
+  var key = (dbKey || deviceName).toLowerCase();
+  var local = LOCAL_IMGS[key];
+  if (local && local.length) return local;
+  // 2. Wikimedia Commons fallback
+  var ckey = 'gi_' + key;
+  if (imgSearchCache[ckey]) return imgSearchCache[ckey];
+  var wiki = await searchWikimediaCommons(deviceName);
+  imgSearchCache[ckey] = wiki;
+  return wiki;
 }
 
-// ─── LOCAL DATABASE (120+ devices) ───────────────────────────
+// ─── LOCAL DATABASE// ─── LOCAL DATABASE (120+ devices) ───────────────────────────
 const LOCAL_DB = {
   mobile: {
     'iphone 16 pro max': { Name: 'iPhone 16 Pro Max', Display: '6.9" OLED 2868×1320, 460ppi, 120Hz ProMotion', Processor: 'Apple A18 Pro (3nm)', Camera: '48MP + 48MP UW + 12MP 5× periscope | 12MP front', 'RAM / Storage': '8GB / 256GB–1TB', Battery: '4685mAh, 30W wired, 25W MagSafe', Price: 'Starting at $1,199' },
@@ -802,10 +831,384 @@ function initCard(el, category) {
   renderEmpty(el, category);
 }
 
+// ─── SMART AI CRITERIA ────────────────────────────────────────
+function detectCriteria(prompt, category) {
+  var p = prompt.toLowerCase();
+  if (category === 'mobile') {
+    if (p.match(/camera|photo|picture|shoot|zoom|selfie|portrait|night|low.light/)) return ['Camera Quality', 'Low Light', 'Zoom', 'Video', 'Selfie'];
+    if (p.match(/battery|charge|charging|endurance|backup|long/)) return ['Battery Size', 'Charging Speed', 'Battery Life', 'Efficiency'];
+    if (p.match(/gaming|game|fps|gpu|render|performance|processor|speed|fast/)) return ['Processor', 'GPU Power', 'RAM', 'Thermal Management'];
+    if (p.match(/display|screen|resolution|brightness|refresh|oled|amoled|hz/)) return ['Display Quality', 'Brightness', 'Refresh Rate', 'Resolution'];
+    if (p.match(/value|price|budget|cheap|money|worth|affordable/)) return ['Price', 'Value for Money', 'Features per ₹', 'Build Quality'];
+    if (p.match(/build|design|premium|feel|durability|quality/)) return ['Build Quality', 'Premium Feel', 'Durability', 'Design'];
+  }
+  if (category === 'laptop') {
+    if (p.match(/gaming|game|fps|gpu|render|graphics/)) return ['GPU Performance', 'CPU Power', 'Thermal Management', 'Display Hz'];
+    if (p.match(/battery|portab|travel|light|weight|thin/)) return ['Battery Life', 'Weight', 'Portability', 'Efficiency'];
+    if (p.match(/creative|video.edit|design|render|3d|color|display/)) return ['Display Quality', 'Color Accuracy', 'CPU/GPU Render', 'RAM'];
+    if (p.match(/student|study|college|budget|value|cheap/)) return ['Price', 'Battery Life', 'Performance', 'Build Quality'];
+    if (p.match(/program|code|developer|dev|software/)) return ['CPU Performance', 'RAM', 'Storage Speed', 'Battery Life'];
+  }
+  if (category === 'tablet') {
+    if (p.match(/draw|art|pencil|apple pencil|stylus|creative/)) return ['Display Quality', 'Stylus Support', 'Refresh Rate', 'Color Accuracy'];
+    if (p.match(/media|video|movie|netflix|stream|watch/)) return ['Display Quality', 'Speakers', 'Battery Life', 'Performance'];
+    if (p.match(/productive|work|office|note|document/)) return ['Keyboard Support', 'Performance', 'Display', 'Battery Life'];
+  }
+  var defaults = { mobile: ['Overall Performance', 'Camera', 'Battery', 'Value'], laptop: ['Performance', 'Battery Life', 'Display', 'Value'], tablet: ['Performance', 'Display', 'Battery', 'Value'] };
+  return defaults[category] || ['Performance', 'Camera', 'Battery', 'Value'];
+}
+
+// ─── AI COMPARE ───────────────────────────────────────────────
+async function askAI() {
+  var btn = document.getElementById('ai-ask-btn');
+  var btnText = document.getElementById('ai-btn-text');
+  var promptVal = document.getElementById('ai-prompt').value.trim();
+  var grid = document.getElementById('ai-result-grid');
+  var cardsEl = document.getElementById('ai-cards');
+  var verdictEl = document.getElementById('ai-verdict');
+  var queryLabel = document.getElementById('ai-result-query');
+  if (!promptVal) { document.getElementById('ai-prompt').focus(); return; }
+  var cat = document.body.dataset.category || 'mobile';
+  var cards = document.querySelectorAll('.product-card');
+  var devices = [];
+  cards.forEach(function (card) {
+    var input = card.querySelector('.device-search');
+    var name = input ? input.value.trim() : '';
+    if (!name) return;
+    var rows = card.querySelectorAll('.spec-row');
+    var specs = {};
+    rows.forEach(function (row) {
+      var k = row.querySelector('.spec-label'), v = row.querySelector('.spec-value');
+      if (k && v) specs[k.textContent.trim()] = v.textContent.trim();
+    });
+    if (Object.keys(specs).length > 0) devices.push({ name: name, specs: specs });
+  });
+  if (devices.length === 0) {
+    grid.style.display = 'block';
+    cardsEl.innerHTML = '<div class="ai-loading-state" style="color:var(--red)">Please search for at least one device first.</div>';
+    return;
+  }
+  btn.disabled = true; btnText.textContent = 'Analyzing…';
+  grid.style.display = 'block';
+  queryLabel.textContent = '"' + promptVal + '"';
+  cardsEl.innerHTML = '<div class="ai-loading-state"><div class="ai-loading-dots"><span></span><span></span><span></span></div>AI is analyzing specs…</div>';
+  verdictEl.style.display = 'none';
+  var smartCriteria = detectCriteria(promptVal, cat);
+  var deviceList = devices.map(function (d) {
+    return d.name + '\n' + Object.entries(d.specs).map(function (e) { return '  ' + e[0] + ': ' + e[1]; }).join('\n');
+  }).join('\n\n');
+  var criteriaStr = smartCriteria.map(function (c) { return '"' + c + '"'; }).join(', ');
+  var systemPrompt = 'You are a tech expert. The user is comparing ' + cat + 's.\n\n'
+    + 'Devices:\n' + deviceList + '\n\nUser priority: "' + promptVal + '"\n\n'
+    + 'Analyze each device. Give extra weight to specs matching the priority.\n'
+    + 'Use EXACTLY these criteria labels: ' + criteriaStr + '\n\n'
+    + 'Respond ONLY with JSON:\n'
+    + '{"query":"brief label","devices":[{"name":"Device","score":8.5,"criteria":[{"label":"Criteria1","score":9},{"label":"Criteria2","score":7}],"reason":"2 sentence explanation"}],"winner":"Device Name","verdict":"2-3 sentence recommendation"}';
+  try {
+    var headers = { 'Content-Type': 'application/json', 'anthropic-version': '2023-06-01', 'anthropic-dangerous-direct-browser-access': 'true' };
+    if (ANTHROPIC_API_KEY) headers['x-api-key'] = ANTHROPIC_API_KEY;
+    var res = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST', headers: headers,
+      body: JSON.stringify({ model: 'claude-sonnet-4-6', max_tokens: 1000, messages: [{ role: 'user', content: systemPrompt }] })
+    });
+    if (!res.ok) { var err = await res.json().catch(function () { return {}; }); throw new Error((err.error && err.error.message) || 'HTTP ' + res.status); }
+    var data = await res.json();
+    var raw = data.content.map(function (b) { return b.text || ''; }).join('').replace(/```json|```/g, '').trim();
+    renderAICards(JSON.parse(raw), cardsEl, verdictEl);
+  } catch (e) {
+    cardsEl.innerHTML = '<div class="ai-loading-state" style="color:var(--red)">Error: ' + e.message + '</div>';
+  } finally { btn.disabled = false; btnText.textContent = 'Analyze'; }
+}
+
+function renderAICards(data, cardsEl, verdictEl) {
+  var winner = data.winner, html = '';
+  data.devices.forEach(function (d) {
+    var isWinner = d.name === winner;
+    var pct = Math.round((d.score / 10) * 100);
+    var criteriaHtml = '';
+    if (d.criteria && d.criteria.length) {
+      criteriaHtml = '<div class="ai-criteria-list">';
+      d.criteria.forEach(function (c) {
+        var cpct = Math.round((c.score / 10) * 100);
+        criteriaHtml += '<div class="ai-criteria-row"><div class="ai-criteria-label"><span>' + c.label + '</span><span>' + c.score + '/10</span></div><div class="ai-criteria-bar-wrap"><div class="ai-criteria-bar" data-width="' + cpct + '%"></div></div></div>';
+      });
+      criteriaHtml += '</div>';
+    }
+    html += '<div class="ai-result-card' + (isWinner ? ' winner' : '') + '">'
+      + (isWinner ? '<div class="ai-card-winner-badge">★ Best Pick</div>' : '')
+      + '<div class="ai-card-name">' + d.name + '</div>'
+      + '<div class="ai-score-wrap"><div class="ai-score-circle" style="--pct:' + pct + '"><span class="ai-score-num">' + d.score + '</span></div>'
+      + '<div class="ai-score-label"><strong>' + d.score + '<span style="font-size:11px;color:var(--muted)">/10</span></strong>Overall Score</div></div>'
+      + criteriaHtml + '<div class="ai-card-reason">' + d.reason + '</div></div>';
+  });
+  cardsEl.innerHTML = html;
+  setTimeout(function () {
+    cardsEl.querySelectorAll('.ai-criteria-bar').forEach(function (bar) { bar.style.width = bar.dataset.width; });
+  }, 60);
+  if (data.verdict) { verdictEl.innerHTML = '<strong>AI Verdict:</strong> ' + data.verdict; verdictEl.style.display = 'block'; }
+}
+
+function shareComparison() {
+  var cards = document.querySelectorAll('.product-card'), names = [];
+  cards.forEach(function (card) { var input = card.querySelector('.device-search'); if (input && input.value.trim()) names.push(input.value.trim()); });
+  if (!names.length) { showToast('Search for devices first!'); return; }
+  var cat = document.body.dataset.category || 'mobile';
+  var params = new URLSearchParams();
+  params.set('cat', cat);
+  names.forEach(function (n, i) { params.set('d' + i, n); });
+  var url = window.location.origin + window.location.pathname + '?' + params.toString();
+  navigator.clipboard.writeText(url).then(function () { showToast('Link copied! Share with friends 🎉'); }).catch(function () { prompt('Copy this link:', url); });
+}
+
+function downloadPDF() { showToast('Opening print dialog — save as PDF 📄'); setTimeout(function () { window.print(); }, 500); }
+
+function showToast(msg) {
+  var toast = document.getElementById('share-toast');
+  if (!toast) { toast = document.createElement('div'); toast.id = 'share-toast'; toast.className = 'share-toast'; document.body.appendChild(toast); }
+  toast.textContent = msg; toast.classList.add('show');
+  setTimeout(function () { toast.classList.remove('show'); }, 3000);
+}
+
+// ─── UNIFIED SEARCH ───────────────────────────────────────────
+var unifiedSlots = [null, null, null];
+
+function initUnifiedSearch() {
+  var cat = document.body.dataset.category || 'mobile';
+  var c = CATEGORY_CONFIG[cat];
+  var input = document.getElementById('unified-input');
+  var sugg = document.getElementById('unified-sugg');
+  if (!input || !sugg) return;
+  var hintsWrap = document.querySelector('.unified-search-section .unified-hints') || document.querySelector('.unified-search-section div[style*="margin-top:10px"]');
+  if (hintsWrap) {
+    c.suggestions.slice(0, 5).forEach(function (name) {
+      var chip = document.createElement('span');
+      chip.className = 'unified-hint-chip'; chip.textContent = name;
+      chip.onclick = function () { addToSlot(name); };
+      hintsWrap.appendChild(chip);
+    });
+  }
+  var SEPARATORS = /\s+vs\.?\s+|\s+versus\s+|\s+and\s+|\s+or\s+|[,&\/]+/gi;
+
+  function isMultiQuery(q) {
+    return SEPARATORS.test(q.toLowerCase());
+  }
+
+  function parseMulti(raw) {
+    var db = LOCAL_DB[document.body.dataset.category || 'mobile'] || {};
+    var allKeys = Object.keys(db);
+    var q = raw.toLowerCase().replace(/^(i want to compare|compare|let me compare|show me)\s+/i, '').trim();
+    SEPARATORS.lastIndex = 0;
+    var chunks = q.replace(SEPARATORS, '|||').split('|||')
+      .map(function (s) { return s.trim(); }).filter(function (s) { return s.length > 1; });
+    if (!chunks.length) chunks = [q];
+    var found = [], used = {};
+    chunks.slice(0, 3).forEach(function (chunk) {
+      if (db[chunk] && !used[chunk]) { found.push(chunk); used[chunk] = true; return; }
+      var best = null, bestScore = 0;
+      var cw = chunk.split(/\s+/).filter(Boolean);
+      allKeys.forEach(function (key) {
+        if (used[key]) return;
+        var kw = key.split(/\s+/);
+        var hits = kw.filter(function (k) { return cw.some(function (c) { return c === k || c.startsWith(k) || k.startsWith(c); }); }).length;
+        var score = hits / kw.length;
+        if (hits >= Math.max(1, Math.ceil(kw.length * 0.6)) && score > bestScore) { bestScore = score; best = key; }
+      });
+      found.push(best || chunk);
+      if (best) used[best] = true;
+    });
+    return found;
+  }
+
+  function showSugg(q) {
+    SEPARATORS.lastIndex = 0;
+    if (q.trim() && SEPARATORS.test(q)) {
+      // Multi-device query — show single "Compare All" option
+      SEPARATORS.lastIndex = 0;
+      var parsed = parseMulti(q);
+      if (parsed.length > 1) {
+        sugg.innerHTML = '<div class="unified-sugg-item" id="sugg-multi" style="background:rgba(79,110,247,0.08);border-color:rgba(79,110,247,0.3)">'
+          + '<span class="sugg-icon">⚡</span>'
+          + '<span class="sugg-name">Compare: <strong>' + parsed.join(' vs ') + '</strong></span>'
+          + '<span class="sugg-slot" style="background:var(--accent);color:#fff;border-color:var(--accent)">' + parsed.length + ' devices →</span>'
+          + '</div>';
+        sugg.classList.add('open');
+        return;
+      }
+    }
+    var matches = q.trim()
+      ? c.suggestions.filter(function (s) { return s.toLowerCase().includes(q.toLowerCase()); }).slice(0, 8)
+      : c.suggestions.slice(0, 8);
+    if (!matches.length) { sugg.classList.remove('open'); return; }
+    sugg.innerHTML = matches.map(function (s) {
+      var slotIdx = unifiedSlots.indexOf(s), taken = slotIdx >= 0;
+      return '<div class="unified-sugg-item" data-name="' + s + '"><span class="sugg-icon">' + c.icon + '</span><span class="sugg-name">' + s + '</span><span class="sugg-slot' + (taken ? ' taken' : '') + '">' + (taken ? 'Slot ' + (slotIdx + 1) : 'Add') + '</span></div>';
+    }).join('');
+    sugg.classList.add('open');
+  }
+
+  input.addEventListener('focus', function () { showSugg(input.value); });
+  input.addEventListener('input', function () { showSugg(input.value); });
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && input.value.trim()) {
+      SEPARATORS.lastIndex = 0;
+      if (SEPARATORS.test(input.value)) {
+        loadMulti(parseMulti(input.value));
+      } else {
+        addToSlot(input.value.trim());
+      }
+      input.value = '';
+      sugg.classList.remove('open');
+    }
+    if (e.key === 'Escape') sugg.classList.remove('open');
+  });
+  sugg.addEventListener('click', function (e) {
+    if (e.target.closest('#sugg-multi')) {
+      SEPARATORS.lastIndex = 0;
+      loadMulti(parseMulti(input.value));
+      input.value = ''; sugg.classList.remove('open'); return;
+    }
+    var item = e.target.closest('.unified-sugg-item'); if (!item) return;
+    addToSlot(item.dataset.name); input.value = ''; sugg.classList.remove('open');
+  });
+  document.addEventListener('click', function (e) {
+    var section = document.querySelector('.unified-search-section');
+    if (section && !section.contains(e.target)) sugg.classList.remove('open');
+  });
+}
+
+function addToSlot(name) {
+  if (unifiedSlots.indexOf(name) !== -1) return;
+  var idx = unifiedSlots.indexOf(null);
+  if (idx === -1) { unifiedSlots = [name, unifiedSlots[1], unifiedSlots[2]]; idx = 0; }
+  else { unifiedSlots[idx] = name; }
+  updateSlotUI();
+  var cat = document.body.dataset.category || 'mobile';
+  var cards = document.querySelectorAll('.product-card');
+  if (cards[idx]) {
+    var cardInput = cards[idx].querySelector('.device-search');
+    if (cardInput) cardInput.value = name;
+    loadDevice(cards[idx], name, cat);
+  }
+  var aiSection = document.getElementById('ai-section');
+  if (aiSection) aiSection.style.display = 'block';
+}
+
+function clearSlot(idx) {
+  unifiedSlots[idx] = null; updateSlotUI();
+  var cards = document.querySelectorAll('.product-card');
+  if (cards[idx]) {
+    var cardInput = cards[idx].querySelector('.device-search');
+    if (cardInput) cardInput.value = '';
+    renderEmpty(cards[idx], document.body.dataset.category || 'mobile');
+  }
+}
+
+function updateSlotUI() {
+  unifiedSlots.forEach(function (name, i) {
+    var slot = document.getElementById('slot-' + i); if (!slot) return;
+    var nameEl = slot.querySelector('.slot-name');
+    if (name) {
+      slot.classList.add('filled'); nameEl.textContent = name;
+      if (!slot.querySelector('.slot-clear')) {
+        var x = document.createElement('span'); x.className = 'slot-clear'; x.textContent = '×';
+        x.onclick = function (e) { e.stopPropagation(); clearSlot(i); };
+        slot.appendChild(x);
+      }
+    } else {
+      slot.classList.remove('filled'); nameEl.textContent = 'Slot ' + (i + 1) + ' — empty';
+      var x = slot.querySelector('.slot-clear'); if (x) x.remove();
+    }
+  });
+}
+
+function loadMulti(devices) {
+  if (!devices || !devices.length) return;
+  var cat = document.body.dataset.category || 'mobile';
+  var cards = document.querySelectorAll('.product-card');
+  // Clear all slots first
+  unifiedSlots = [null, null, null];
+  cards.forEach(function (card) {
+    var inp = card.querySelector('.device-search');
+    if (inp) inp.value = '';
+    renderEmpty(card, cat);
+  });
+  updateSlotUI();
+  // Load each device into its slot
+  devices.forEach(function (name, i) {
+    if (i >= 3) return;
+    unifiedSlots[i] = name;
+    if (cards[i]) {
+      var inp = cards[i].querySelector('.device-search');
+      if (inp) inp.value = name;
+      loadDevice(cards[i], name, cat);
+    }
+  });
+  updateSlotUI();
+  var ai = document.getElementById('ai-section');
+  if (ai) ai.style.display = 'block';
+}
+
+function unifiedSearch() {
+  var input = document.getElementById('unified-input');
+  if (!input || !input.value.trim()) return;
+  var val = input.value.trim();
+  var SEPARATORS = /\s+vs\.?\s+|\s+versus\s+|\s+and\s+|\s+or\s+|[,&\/]+/gi;
+  if (SEPARATORS.test(val)) {
+    SEPARATORS.lastIndex = 0;
+    var db = LOCAL_DB[document.body.dataset.category || 'mobile'] || {};
+    var allKeys = Object.keys(db);
+    var q = val.toLowerCase().replace(/^(i want to compare|compare|let me compare|show me)\s+/i, '').trim();
+    SEPARATORS.lastIndex = 0;
+    var chunks = q.replace(SEPARATORS, '|||').split('|||')
+      .map(function (s) { return s.trim(); }).filter(function (s) { return s.length > 1; });
+    if (!chunks.length) chunks = [q];
+    var found = [], used = {};
+    chunks.slice(0, 3).forEach(function (chunk) {
+      if (db[chunk] && !used[chunk]) { found.push(chunk); used[chunk] = true; return; }
+      var best = null, bestScore = 0;
+      var cw = chunk.split(/\s+/).filter(Boolean);
+      allKeys.forEach(function (key) {
+        if (used[key]) return;
+        var kw = key.split(/\s+/);
+        var hits = kw.filter(function (k) { return cw.some(function (c) { return c === k || c.startsWith(k) || k.startsWith(c); }); }).length;
+        var score = hits / kw.length;
+        if (hits >= Math.max(1, Math.ceil(kw.length * 0.6)) && score > bestScore) { bestScore = score; best = key; }
+      });
+      found.push(best || chunk);
+      if (best) used[best] = true;
+    });
+    loadMulti(found);
+  } else {
+    addToSlot(val);
+  }
+  input.value = '';
+  var sugg = document.getElementById('unified-sugg');
+  if (sugg) sugg.classList.remove('open');
+}
+
 // ─── BOOT ─────────────────────────────────────────────────────
-document.addEventListener('DOMContentLoaded', () => {
-  const cat = document.body.dataset.category || 'mobile';
-  const counts = Object.keys(LOCAL_DB[cat]).length;
-  document.querySelectorAll('.product-card').forEach(c => initCard(c, cat));
-  console.log(`BestMatch v2.4 [${cat}] — ${counts} devices`);
+document.addEventListener('DOMContentLoaded', function () {
+  var cat = document.body.dataset.category || 'mobile';
+  document.querySelectorAll('.product-card').forEach(function (c) { initCard(c, cat); });
+  initUnifiedSearch();
+  // Auto-load from URL params (?d0=iPhone+16&d1=Samsung+S25&d2=Pixel+9)
+  var params = new URLSearchParams(window.location.search);
+  var cards = document.querySelectorAll('.product-card');
+  var loaded = 0;
+  ['d0', 'd1', 'd2'].forEach(function (key, i) {
+    var name = params.get(key);
+    if (name && cards[i]) {
+      var input = cards[i].querySelector('.device-search');
+      if (input) input.value = name;
+      loadDevice(cards[i], name, cat);
+      unifiedSlots[i] = name;
+      loaded++;
+    }
+  });
+  if (loaded > 0) {
+    updateSlotUI();
+    var aiSection = document.getElementById('ai-section');
+    if (aiSection) aiSection.style.display = 'block';
+  }
+  console.log('BestMatch v2.5 [' + cat + '] — ' + Object.keys(LOCAL_DB[cat]).length + ' devices');
 });
