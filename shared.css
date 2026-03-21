@@ -538,7 +538,8 @@ footer {
 
 /* ── Global fluid base (all screens) ── */
 html {
-  -webkit-text-size-adjust: 100%; /* prevent iOS font inflation */
+  -webkit-text-size-adjust: 100%;
+  /* prevent iOS font inflation */
   text-size-adjust: 100%;
 }
 
@@ -547,6 +548,7 @@ html {
   .comparison-container {
     padding: 0 40px 60px;
   }
+
   .unified-search-section {
     max-width: 920px;
   }
@@ -558,19 +560,23 @@ html {
   .comparison-container {
     padding: 0 20px 50px;
   }
+
   .product-comparison {
     grid-template-columns: 1fr 1fr;
     gap: 18px;
   }
+
   .product-card:nth-child(3) {
     grid-column: 1 / -1;
     max-width: 520px;
     margin: 0 auto;
     width: 100%;
   }
+
   .ai-cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   }
+
   .unified-search-section {
     max-width: 800px;
   }
@@ -583,41 +589,51 @@ html {
     padding: 0 24px;
     height: 58px;
   }
+
   .hero {
     padding: 44px 24px 32px;
   }
+
   .hero h2 {
     font-size: clamp(26px, 4vw, 38px);
   }
+
   .unified-search-section {
     padding: 0 20px;
     margin-bottom: 28px;
   }
+
   .unified-slots {
     flex-wrap: wrap;
     gap: 8px;
   }
+
   .unified-slot {
     flex: 1;
     min-width: 130px;
   }
+
   .comparison-container {
     padding: 0 20px 48px;
   }
+
   .product-comparison {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
   }
+
   .product-card:nth-child(3) {
     grid-column: 1 / -1;
     max-width: 460px;
     margin: 0 auto;
     width: 100%;
   }
+
   .ai-compare-section {
     padding: 0 20px;
     margin-bottom: 48px;
   }
+
   .ai-cards-grid {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
@@ -630,117 +646,147 @@ html {
     padding: 0 20px;
     height: 54px;
   }
+
   .logo {
     font-size: 19px;
   }
+
   nav ul li a {
     padding: 5px 11px;
     font-size: 11px;
     letter-spacing: 0;
   }
+
   .hero {
     padding: 36px 20px 24px;
   }
+
   .hero h2 {
     font-size: clamp(24px, 5vw, 34px);
   }
+
   .hero p {
     font-size: 12px;
   }
+
   .unified-search-section {
     padding: 0 16px;
     margin-bottom: 22px;
   }
+
   .unified-search-wrap {
     border-radius: 12px;
     padding: 5px 5px 5px 16px;
     gap: 8px;
   }
+
   .unified-search-input {
     font-size: 13px;
   }
+
   .unified-search-btn {
     padding: 10px 16px;
     font-size: 12px;
   }
+
   .unified-slots {
     flex-wrap: wrap;
     gap: 6px;
   }
+
   .unified-slot {
     flex: 1;
     min-width: 120px;
     font-size: 10px;
   }
+
   .comparison-container {
     padding: 0 16px 40px;
   }
+
   .product-comparison {
     grid-template-columns: 1fr 1fr;
     gap: 14px;
   }
+
   .product-card:nth-child(3) {
     grid-column: 1 / -1;
     max-width: 400px;
     margin: 0 auto;
     width: 100%;
   }
+
   .card-header {
     padding: 14px 14px 0;
     gap: 12px;
   }
+
   .card-specs {
     padding: 12px 14px 16px;
     gap: 6px;
   }
+
   .spec-label {
     font-size: 8px;
   }
+
   .spec-value {
     font-size: 11px;
   }
+
   .spec-row.price-row .spec-value {
     font-size: 13px;
   }
+
   .ai-compare-section {
     padding: 0 16px;
     margin-bottom: 40px;
   }
+
   .ai-prompt-area {
     padding: 16px;
   }
+
   .ai-prompt-row {
     flex-direction: column;
     gap: 10px;
   }
+
   .ai-prompt-input {
     width: 100%;
     min-height: 80px;
     font-size: 13px;
   }
+
   .ai-analyze-btn {
     width: 100%;
     justify-content: center;
     min-height: 46px;
   }
+
   .ai-cards-grid {
     grid-template-columns: 1fr;
   }
+
   .ai-result-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
+
   .ai-result-actions {
     width: 100%;
   }
+
   .ai-action-btn {
     flex: 1;
     justify-content: center;
   }
+
   .ai-result-card {
     padding: 16px;
   }
+
   footer {
     padding: 16px 20px;
   }
@@ -753,138 +799,174 @@ html {
     padding: 0 16px;
     height: 52px;
   }
+
   .logo {
     font-size: 17px;
   }
+
   nav ul {
     gap: 2px;
   }
+
   nav ul li a {
     padding: 5px 9px;
     font-size: 10px;
   }
+
   .hero {
     padding: 28px 16px 20px;
   }
+
   .hero h2 {
     font-size: clamp(22px, 6vw, 30px);
   }
+
   .hero p {
     font-size: 12px;
   }
+
   .unified-search-section {
     padding: 0 14px;
     margin-bottom: 18px;
   }
+
   .unified-search-wrap {
     padding: 5px 5px 5px 14px;
     border-radius: 12px;
     gap: 8px;
   }
+
   /* font-size 16px on all inputs prevents iOS Safari auto-zoom on focus */
   .unified-search-input {
     font-size: 16px;
     padding: 6px 0;
   }
+
   .unified-search-btn {
     padding: 9px 14px;
     font-size: 11px;
     border-radius: 8px;
     white-space: nowrap;
   }
+
   .unified-slots {
     flex-direction: column;
     gap: 6px;
   }
+
   .unified-slot {
     min-width: unset;
     width: 100%;
   }
+
   .comparison-container {
     padding: 0 14px 32px;
   }
+
   .product-comparison {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+
   .product-card:nth-child(3) {
     grid-column: auto;
     max-width: none;
   }
+
   .card-image-wrap {
     aspect-ratio: 16 / 10;
   }
+
   .card-header {
     padding: 14px 14px 0;
     gap: 12px;
   }
+
   .card-specs {
     padding: 12px 14px 14px;
     gap: 6px;
   }
+
   .spec-row {
     padding: 9px 11px;
   }
+
   .spec-value {
     font-size: 12px;
   }
+
   /* font-size 16px prevents iOS Safari zoom */
   .device-search {
     font-size: 16px;
     padding: 11px 14px 11px 36px;
   }
+
   .ai-compare-section {
     padding: 0 14px;
     margin-bottom: 32px;
   }
+
   .ai-prompt-area {
     padding: 14px;
   }
+
   .ai-prompt-row {
     flex-direction: column;
     gap: 10px;
   }
+
   .ai-prompt-input {
-    font-size: 16px; /* iOS zoom prevention */
+    font-size: 16px;
+    /* iOS zoom prevention */
     padding: 12px 14px;
     min-height: 88px;
     width: 100%;
   }
+
   .ai-analyze-btn {
     width: 100%;
     justify-content: center;
     min-height: 48px;
     font-size: 13px;
   }
+
   .ai-result-header {
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
   }
+
   .ai-result-actions {
     width: 100%;
   }
+
   .ai-action-btn {
     flex: 1;
     justify-content: center;
     min-height: 42px;
   }
+
   .ai-cards-grid {
     grid-template-columns: 1fr;
   }
+
   .ai-result-card {
     padding: 14px;
   }
+
   .ai-verdict-summary {
     font-size: 12px;
     padding: 12px 14px;
   }
+
   .unified-suggestions {
     max-height: 220px;
   }
+
   .suggestions-list {
     max-height: 200px;
   }
+
   footer {
     padding: 14px 16px;
     font-size: 10px;
@@ -898,85 +980,109 @@ html {
     padding: 0 14px;
     height: 50px;
   }
+
   .logo {
     font-size: 16px;
   }
+
   nav ul li a {
     padding: 5px 8px;
     font-size: 10px;
   }
+
   .hero {
     padding: 24px 14px 18px;
   }
+
   .hero h2 {
     font-size: clamp(20px, 6.5vw, 28px);
   }
+
   .unified-search-section {
     padding: 0 12px;
     margin-bottom: 16px;
   }
+
   .unified-search-wrap {
     padding: 4px 4px 4px 12px;
     gap: 6px;
   }
+
   .unified-search-btn {
     padding: 9px 12px;
     font-size: 11px;
   }
+
   .comparison-container {
     padding: 0 12px 28px;
   }
+
   .product-comparison {
     gap: 14px;
   }
+
   .card-image-wrap {
     aspect-ratio: 4 / 3;
   }
+
   .card-header {
     padding: 12px 12px 0;
     gap: 10px;
   }
+
   .card-specs {
     padding: 10px 12px 12px;
     gap: 5px;
   }
+
   .spec-row {
     padding: 8px 10px;
   }
+
   .spec-label {
     font-size: 8px;
   }
+
   .spec-value {
     font-size: 11px;
   }
+
   .ai-compare-section {
     padding: 0 12px;
     margin-bottom: 28px;
   }
+
   .ai-prompt-area {
     padding: 12px;
   }
+
   .ai-prompt-input {
     min-height: 84px;
     padding: 10px 12px;
   }
+
   .ai-result-card {
     padding: 12px;
   }
+
   .ai-score-circle {
     width: 56px;
     height: 56px;
   }
+
   .ai-score-circle::after {
     width: 42px;
     height: 42px;
   }
+
   .ai-score-num {
     font-size: 14px;
   }
+
   .ai-score-label strong {
     font-size: 16px;
   }
+
   footer {
     padding: 12px 14px;
     font-size: 10px;
@@ -989,35 +1095,44 @@ html {
   .logo {
     font-size: 15px;
   }
+
   nav ul li a {
     padding: 4px 7px;
     font-size: 9px;
     letter-spacing: 0;
   }
+
   .hero h2 {
     font-size: 20px;
   }
+
   .hero p {
     font-size: 11px;
   }
+
   .unified-search-btn {
     padding: 8px 10px;
   }
+
   .spec-value {
     font-size: 11px;
     line-height: 1.3;
   }
+
   .ai-score-circle {
     width: 50px;
     height: 50px;
   }
+
   .ai-score-circle::after {
     width: 36px;
     height: 36px;
   }
+
   .ai-score-num {
     font-size: 13px;
   }
+
   .ai-card-name {
     font-size: 13px;
   }
@@ -1030,32 +1145,41 @@ html {
     padding: 0 10px;
     height: 48px;
   }
+
   .logo {
     font-size: 14px;
   }
+
   nav ul li a {
     padding: 4px 6px;
     font-size: 9px;
   }
+
   .hero {
     padding: 20px 10px 16px;
   }
+
   .hero h2 {
     font-size: 18px;
   }
+
   .unified-search-section {
     padding: 0 10px;
   }
+
   .unified-search-input {
     font-size: 14px;
   }
+
   .unified-search-btn {
     padding: 8px 10px;
     font-size: 10px;
   }
+
   .comparison-container {
     padding: 0 10px 24px;
   }
+
   .ai-compare-section {
     padding: 0 10px;
   }
@@ -1065,19 +1189,23 @@ html {
    Covers: all iPhones, all Android phones, all tablets (iOS + Android)
    Key fixes: no broken hover states, 44px min tap targets (Apple HIG), no iOS zoom */
 @media (hover: none) and (pointer: coarse) {
+
   /* Remove hover effects — they don't work on touch and cause sticky states */
   .product-card:hover {
     transform: none;
     border-color: var(--border);
   }
+
   .product-card:hover .card-image-wrap img {
     transform: none;
   }
+
   .unified-hint-chip:hover {
     color: var(--muted);
     border-color: var(--border);
     background: var(--surface2);
   }
+
   .ai-action-btn:hover {
     color: var(--muted);
     border-color: var(--border);
@@ -1089,13 +1217,16 @@ html {
     padding: 13px 16px;
     min-height: 44px;
   }
+
   .unified-hint-chip {
     padding: 8px 14px;
     min-height: 36px;
   }
+
   .unified-slot {
     min-height: 36px;
   }
+
   .unified-slot .slot-clear {
     opacity: 1;
     padding: 6px 10px;
@@ -1105,19 +1236,23 @@ html {
     align-items: center;
     justify-content: center;
   }
+
   .unified-search-btn,
   .ai-analyze-btn {
     min-height: 46px;
   }
+
   .ai-action-btn {
     min-height: 42px;
   }
+
   .img-dot {
     width: 8px;
     height: 8px;
     padding: 4px;
     box-sizing: content-box;
   }
+
   /* Remove card hover scale on touch — causes layout jump after tap */
   .product-card {
     transition: border-color 0.3s;
@@ -1130,12 +1265,15 @@ html {
   .hero {
     padding: 20px 20px 16px;
   }
+
   .hero h2 {
     font-size: 22px;
   }
+
   .card-image-wrap {
     aspect-ratio: 16 / 9;
   }
+
   .unified-search-section {
     margin-bottom: 16px;
   }
@@ -1221,7 +1359,7 @@ html {
 }
 
 /* Target the inline-styled hints div in index/tablet/laptop HTML */
-.unified-search-section > div[style*="flex-wrap"],
+.unified-search-section>div[style*="flex-wrap"],
 .unified-hints {
   flex-wrap: wrap !important;
   overflow-x: auto !important;
@@ -1233,7 +1371,7 @@ html {
   gap: 6px !important;
 }
 
-.unified-search-section > div[style*="flex-wrap"]::-webkit-scrollbar {
+.unified-search-section>div[style*="flex-wrap"]::-webkit-scrollbar {
   display: none;
 }
 
@@ -1417,7 +1555,7 @@ html {
 .ai-prompt-row {
   display: flex;
   gap: 10px;
-  align-items: flex-end;
+  align-items: stretch;
 }
 
 .ai-prompt-input {
@@ -1457,9 +1595,11 @@ html {
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   white-space: nowrap;
   transition: opacity 0.2s;
+  align-self: stretch;
 }
 
 .ai-analyze-btn:hover {
@@ -1762,6 +1902,7 @@ html {
     font-size: 11px;
     padding: 5px 12px;
   }
+
   .unified-hint-label {
     flex-shrink: 0;
     white-space: nowrap;
