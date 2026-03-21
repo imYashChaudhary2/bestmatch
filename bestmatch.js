@@ -258,7 +258,6 @@ const LOCAL_IMGS = {
   'redmi note 13 pro+': ['images/redmi-note-13-pro-plus-1.png', 'images/redmi-note-13-pro-plus-2.png', 'images/redmi-note-13-pro-plus-3.jpg', 'images/redmi-note-13-pro-plus-4.png'],
   'redmi note 13 pro': ['images/redmi-note-13-pro-plus-1.png', 'images/redmi-note-13-pro-plus-2.png', 'images/redmi-note-13-pro-plus-3.jpg', 'images/redmi-note-13-pro-plus-4.png'],
   'redmi note 13': ['images/redmi-note-13-pro-plus-1.png', 'images/redmi-note-13-pro-plus-2.png', 'images/redmi-note-13-pro-plus-3.jpg', 'images/redmi-note-13-pro-plus-4.png'],
-  'redmi note 8': ['images/redmi-note-13-pro-plus-1.png', 'images/redmi-note-13-pro-plus-2.png', 'images/redmi-note-13-pro-plus-3.jpg', 'images/redmi-note-13-pro-plus-4.png'],
   'redmi 13c': ['images/redmi-note-14-pro-1.png', 'images/redmi-note-14-pro-2.png', 'images/redmi-note-14-pro-3.png', 'images/redmi-note-14-pro-4.png'],
   'redmi 14c': ['images/redmi-note-14-pro-1.png', 'images/redmi-note-14-pro-2.png', 'images/redmi-note-14-pro-3.png', 'images/redmi-note-14-pro-4.png'],
   'nothing phone 3': ['images/nothing-phone-3-1.png', 'images/nothing-phone-3-2.png', 'images/nothing-phone-3-3.png'],
@@ -797,9 +796,6 @@ async function loadDevice(el, name, category) {
       const specs = await fetchFromAPI(name, category);
       renderSpecs(el, specs, null, category);
     }
-    // Show AI Compare section whenever any card loads a device
-    var aiSection = document.getElementById('ai-section');
-    if (aiSection) aiSection.style.display = 'block';
   } catch (e) {
     console.error(e);
     renderError(el, `"${name}" not found. Try an exact model name.`);
